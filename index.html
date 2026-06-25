@@ -6,27 +6,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="asu-header">
-    <section class="asulogo" id="asulogo">
-      <div class="asulogo-static-bars"></div>
 
-      <svg class="asulogo-eye" viewBox="0 0 100 100" width="118" height="118" xmlns="http://www.w3.org/2000/svg">
+  <header class="site-header">
+
+    <section class="logo-box" id="logoBox">
+      <svg class="logo-eye" viewBox="0 0 100 100" width="118" height="118" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="eye-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="1.8" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          <radialGradient id="iris-grad" cx="50%" cy="40%" r="60%">
+          <radialGradient id="irisGrad" cx="50%" cy="40%" r="60%">
             <stop offset="0%" stop-color="#8b0000" />
             <stop offset="100%" stop-color="#1a0000" />
           </radialGradient>
         </defs>
 
         <circle cx="50" cy="50" r="47" fill="none" stroke="#dc143c" stroke-width="0.6" opacity="0.65" />
-        <g class="asulogo-ring">
+
+        <g class="logo-ring">
           <line x1="50" y1="3" x2="50" y2="12" stroke="#dc143c" stroke-width="1.4"/>
           <line x1="73.5" y1="9.3" x2="71.5" y2="15.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
           <line x1="90.7" y1="26.5" x2="84.5" y2="28.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
@@ -44,8 +45,10 @@
         <circle cx="50" cy="50" r="33" fill="none" stroke="#3a0018" stroke-width="0.5" opacity="0.6"/>
         <line x1="28" y1="32" x2="72" y2="68" stroke="#2a0010" stroke-width="0.8" opacity="0.5"/>
         <line x1="72" y1="32" x2="28" y2="68" stroke="#2a0010" stroke-width="0.8" opacity="0.5"/>
-        <path d="M 14,50 C 28,26 72,26 86,50 C 72,74 28,74 14,50 Z" fill="#060000" stroke="#dc143c" stroke-width="1.1" filter="url(#eye-glow)"/>
-        <circle cx="50" cy="50" r="12" fill="url(#iris-grad)"/>
+
+        <path d="M 14,50 C 28,26 72,26 86,50 C 72,74 28,74 14,50 Z"
+          fill="#060000" stroke="#dc143c" stroke-width="1.1" filter="url(#logoGlow)"/>
+        <circle cx="50" cy="50" r="12" fill="url(#irisGrad)"/>
         <circle cx="50" cy="50" r="12" fill="none" stroke="#8b0000" stroke-width="0.8"/>
         <circle cx="50" cy="50" r="5.5" fill="#dc143c" opacity="0.9"/>
         <circle cx="50" cy="50" r="2" fill="#ff3050"/>
@@ -53,17 +56,26 @@
         <line x1="62" y1="50" x2="86" y2="50" stroke="#dc143c" stroke-width="0.5" opacity="0.25"/>
       </svg>
 
-      <div class="asulogo-label"><span>────</span><b>ANIME</b><span>────</span></div>
-      <div class="asulogo-title" data-text="SHOWDOWN">SHOWDOWN</div>
-      <div class="asulogo-divider"><span></span><i></i><span></span></div>
-      <div class="asulogo-subtitle">ULTIMAX</div>
-    </section>
+      <div class="logo-label">
+        <span>────</span>
+        <b>ANIME</b>
+        <span>────</span>
+      </div>
 
-    <div id="asulogo-message">
-      <p class="msg-warning">⚠ SIGNAL INTERRUPTED ⚠</p>
-      <p class="msg-main"></p>
-      <p class="msg-code"></p>
-    </div>
+      <div class="showdown-wrap">
+        <span class="showdown-red">SHOWDOWN</span>
+        <span class="showdown-purple">SHOWDOWN</span>
+        <span class="showdown-main">SHOWDOWN</span>
+      </div>
+
+      <div class="logo-divider">
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
+
+      <div class="logo-subtitle">ULTIMAX</div>
+    </section>
 
     <nav class="asu-nav">
       <div class="nav-row">
@@ -80,6 +92,12 @@
       </div>
     </nav>
   </header>
+
+  <div class="secret-overlay" id="secretOverlay">
+    <p class="secret-warning">⚠ SIGNAL INTERRUPTED ⚠</p>
+    <p class="secret-main" id="secretMain"></p>
+    <p class="secret-code" id="secretCode"></p>
+  </div>
 
   <main class="home-panel">
     <p class="archive-label">OFFICIAL ASU ARCHIVE</p>
