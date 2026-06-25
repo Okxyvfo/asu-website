@@ -25,3 +25,10 @@ body{min-height:100vh;background:#030000;color:white;font-family:Arial,sans-seri
 .home-panel h2{font-size:clamp(2rem,5vw,4rem);margin-bottom:15px}
 .home-panel p{color:#d6d6d6;line-height:1.7;font-size:1.05rem}
 @media(max-width:720px){.nav-row{gap:18px}.asu-button{min-width:260px}}
+#asu-logo{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom:50px;
+}
