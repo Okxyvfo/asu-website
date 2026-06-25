@@ -33,3 +33,52 @@ document.querySelectorAll(".asu-button").forEach(button=>{
   button.appendChild(tentacle);
  }
 });
+const logoContainer = document.getElementById("asu-logo");
+
+const messages = [
+    "YOU'RE NOT SUPPOSED TO BE HERE",
+    "HE IS ALWAYS WATCHING",
+    "DON'T TRUST THE VOTES",
+    "SOMETHING SURVIVED"
+];
+
+let hidden = false;
+
+logoContainer.innerHTML = `
+<div class="logo-wrap">
+    <div class="eye-ring">
+        <div class="eye"></div>
+    </div>
+
+    <div class="anime-label">ANIME</div>
+
+    <h1 class="main-logo">SHOWDOWN</h1>
+
+    <div class="divider"></div>
+
+    <h2 class="sub-logo">ULTIMAX</h2>
+
+    <div class="hidden-message"></div>
+</div>
+`;
+
+const msg = document.querySelector(".hidden-message");
+
+setInterval(() => {
+
+    if(Math.random() < 0.25){
+
+        hidden = true;
+
+        msg.textContent =
+            messages[Math.floor(Math.random()*messages.length)];
+
+        msg.style.opacity = "1";
+
+        setTimeout(()=>{
+            msg.style.opacity = "0";
+        },900);
+
+    }
+
+},15000);
