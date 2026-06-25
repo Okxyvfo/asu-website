@@ -1,14 +1,167 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{min-height:100vh;background:#030000;color:white;font-family:Arial,sans-serif;overflow-x:hidden}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:-999;pointer-events:none}
-.asu-header{width:min(1250px,calc(100% - 32px));margin:0 auto;padding-top:60px;text-align:center}
-.asu-title{font-size:clamp(2.4rem,7vw,5.5rem);letter-spacing:.12em;color:white;text-shadow:0 0 12px rgba(255,0,40,.9),0 0 30px rgba(160,0,0,.7),0 0 55px rgba(80,0,80,.55);margin-bottom:35px}
-.asu-nav{display:flex;flex-direction:column;align-items:center;gap:28px}
+
+.asu-header{width:min(1250px,calc(100% - 32px));margin:0 auto;padding-top:70px;text-align:center}
+#asu-logo{width:100%;display:flex;justify-content:center;align-items:center;margin-bottom:46px;position:relative;z-index:2}
+
+/* LOGO FROM FIGMA EXPORT, CONVERTED FROM REACT */
+.asu-logo-stage{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:visible;
+  font-family:'Bebas Neue','Impact',sans-serif;
+}
+.asu-scanlines{
+  position:absolute;
+  inset:-40px;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,0.13) 0,rgba(0,0,0,0.13) 1px,transparent 1px,transparent 4px);
+  pointer-events:none;
+  z-index:10;
+}
+.asu-vignette{
+  position:absolute;
+  inset:-40px;
+  background:radial-gradient(ellipse 65% 65% at 50% 50%,transparent 35%,rgba(0,0,0,0.55) 100%);
+  pointer-events:none;
+  z-index:9;
+}
+.asu-static-bar{
+  position:absolute;
+  left:0;
+  right:0;
+  height:3px;
+  background:repeating-linear-gradient(90deg,transparent 0,rgba(220,20,60,0.25) 2px,rgba(255,255,255,0.07) 4px,transparent 6px);
+  z-index:45;
+  animation:asu-static 0.06s infinite;
+}
+.asu-logo{
+  position:relative;
+  text-align:center;
+  animation:asu-flicker 10s ease-in-out infinite;
+  z-index:5;
+  user-select:none;
+}
+.asu-logo--glitch{animation:asu-shake 0.07s infinite!important}
+.asu-emblem{
+  display:block;
+  margin:0 auto 10px;
+  filter:drop-shadow(0 0 7px #dc143c) drop-shadow(0 0 18px #7b0000);
+  animation:asu-emblem-glow 3.5s ease-in-out infinite;
+}
+.asu-tick-ring{animation:asu-ring-spin 30s linear infinite;transform-origin:50px 50px}
+.asu-label{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:2px}
+.asu-label-dash{color:#3a0010;font-size:14px;letter-spacing:-2px;line-height:1}
+.asu-label-text{color:#7a0018;font-size:15px;letter-spacing:.65em}
+.asu-title-wrap{position:relative;line-height:.82;margin:2px 0}
+.asu-title-main{
+  display:block;
+  font-size:clamp(58px,12.5vw,128px);
+  color:#dc143c;
+  text-shadow:0 0 8px #dc143c,0 0 22px #9b0000,0 0 50px #4a0000;
+  animation:asu-glow 4.5s ease-in-out infinite;
+  position:relative;
+  z-index:3;
+  letter-spacing:.02em;
+}
+.asu-title-r,.asu-title-b{
+  display:block;
+  position:absolute;
+  top:0;left:0;right:0;
+  font-size:clamp(58px,12.5vw,128px);
+  line-height:.82;
+  letter-spacing:.02em;
+  opacity:0;
+  z-index:1;
+  transition:opacity .04s;
+}
+.asu-title-r{color:#ff1100}
+.asu-title-b{color:#8800cc}
+.asu-logo--glitch .asu-title-r{opacity:.55;animation:asu-shift-r .06s infinite}
+.asu-logo--glitch .asu-title-b{opacity:.45;animation:asu-shift-b .06s infinite}
+.asu-divider{display:flex;align-items:center;justify-content:center;margin:10px auto;width:78%;max-width:460px;gap:0}
+.asu-divider-line{flex:1;height:1px}
+.asu-divider-line--left{background:linear-gradient(90deg,transparent,#6b0020 70%,#3a0030)}
+.asu-divider-line--right{background:linear-gradient(90deg,#3a0030,#6b0020 30%,transparent)}
+.asu-divider-diamond{
+  width:7px;height:7px;background:#dc143c;transform:rotate(45deg);margin:0 10px;
+  box-shadow:0 0 8px #dc143c,0 0 16px #8b0000;flex-shrink:0;animation:asu-diamond-pulse 3.5s ease-in-out infinite;
+}
+.asu-subtitle{
+  font-size:clamp(20px,3.8vw,42px);
+  letter-spacing:.52em;
+  color:#5a005a;
+  text-shadow:0 0 7px #8800aa,0 0 18px #5a0060;
+  animation:asu-sub-glow 5.5s ease-in-out infinite;
+}
+.asu-hidden{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:#000;
+  opacity:0;
+  pointer-events:none;
+  z-index:999;
+  font-family:'Share Tech Mono','Courier New',monospace;
+  transition:opacity .03s;
+}
+.asu-hidden--active{opacity:1;animation:asu-hidden-bg .1s infinite}
+.asu-hidden-header{
+  font-size:clamp(8px,1.4vw,12px);
+  letter-spacing:.3em;
+  color:#cc0000;
+  opacity:.5;
+  margin-bottom:22px;
+  animation:asu-blink .35s infinite;
+}
+.asu-hidden-msg{
+  font-size:clamp(16px,3.8vw,44px);
+  color:#ff1c1c;
+  text-shadow:0 0 12px #ff0000,3px 0 #ff5500,-3px 0 #cc0088;
+  letter-spacing:.06em;
+  text-align:center;
+  padding:0 28px;
+  animation:asu-msg-glitch .13s infinite;
+}
+.asu-hidden-code{
+  margin-top:26px;
+  font-size:clamp(8px,1.2vw,11px);
+  color:#3d0000;
+  letter-spacing:.22em;
+  opacity:.65;
+}
+
+/* NAV BUTTONS */
+.asu-nav{display:flex;flex-direction:column;align-items:center;gap:28px;position:relative;z-index:3}
 .nav-row{display:flex;justify-content:center;flex-wrap:wrap;gap:35px}
-.asu-button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;min-width:220px;height:52px;padding:0 40px;border-radius:999px;border:2px solid rgba(180,0,30,.7);color:white;text-decoration:none;font-weight:900;font-size:1.05rem;letter-spacing:.2em;white-space:nowrap;overflow:visible;background:linear-gradient(135deg,rgba(12,0,4,.98) 0%,rgba(28,2,10,.96) 30%,rgba(60,3,18,.9) 55%,rgba(20,0,8,.98) 80%,rgba(8,0,3,1) 100%);box-shadow:0 0 10px rgba(140,0,20,.3),0 0 24px rgba(80,0,20,.15),inset 0 1px 0 rgba(255,40,60,.08),inset 0 -1px 0 rgba(60,0,10,.5),0 2px 24px rgba(0,0,0,.8);backdrop-filter:blur(8px);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,text-shadow .25s ease}
-.asu-button::before{content:"";position:absolute;inset:-8px;z-index:-2;border-radius:999px;background:radial-gradient(ellipse at center,rgba(139,0,0,.18) 0%,rgba(80,0,30,.08) 50%,transparent 75%);filter:blur(12px);opacity:.8;transition:.25s ease}
-.asu-button::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.18;mix-blend-mode:screen;background:linear-gradient(80deg,transparent 5%,rgba(255,255,255,.45) 6%,transparent 7%),linear-gradient(100deg,transparent 23%,rgba(255,255,255,.35) 24%,transparent 25%),linear-gradient(84deg,transparent 48%,rgba(255,255,255,.4) 49%,transparent 50%),linear-gradient(100deg,transparent 73%,rgba(255,255,255,.35) 74%,transparent 75%)}
-.asu-button:hover{transform:translateY(-3px) scale(1.04);border-color:rgba(220,0,40,1);text-shadow:2px 0 #ff0033,-2px 0 #9000ff,0 0 12px rgba(255,0,51,.55);box-shadow:0 0 24px rgba(200,0,30,.7),0 0 52px rgba(140,0,20,.45),0 0 80px rgba(80,0,60,.25),inset 0 1px 0 rgba(255,60,80,.15),inset 0 -1px 0 rgba(80,0,10,.6),0 2px 32px rgba(0,0,0,.9);animation:glitchText .35s steps(2,end) infinite}
+.asu-button{
+  position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;min-width:220px;height:52px;padding:0 40px;border-radius:999px;
+  border:2px solid rgba(180,0,30,.7);color:white;text-decoration:none;font-weight:900;font-size:1.05rem;letter-spacing:.2em;white-space:nowrap;overflow:visible;
+  background:linear-gradient(135deg,rgba(12,0,4,.98) 0%,rgba(28,2,10,.96) 30%,rgba(60,3,18,.9) 55%,rgba(20,0,8,.98) 80%,rgba(8,0,3,1) 100%);
+  box-shadow:0 0 10px rgba(140,0,20,.3),0 0 24px rgba(80,0,20,.15),inset 0 1px 0 rgba(255,40,60,.08),inset 0 -1px 0 rgba(60,0,10,.5),0 2px 24px rgba(0,0,0,.8);
+  backdrop-filter:blur(8px);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,text-shadow .25s ease;
+}
+.asu-button::before{
+  content:"";position:absolute;inset:-8px;z-index:-2;border-radius:999px;
+  background:radial-gradient(ellipse at center,rgba(139,0,0,.18) 0%,rgba(80,0,30,.08) 50%,transparent 75%);
+  filter:blur(12px);opacity:.8;transition:.25s ease;
+}
+.asu-button::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.18;mix-blend-mode:screen;
+  background:linear-gradient(80deg,transparent 5%,rgba(255,255,255,.45) 6%,transparent 7%),linear-gradient(100deg,transparent 23%,rgba(255,255,255,.35) 24%,transparent 25%),linear-gradient(84deg,transparent 48%,rgba(255,255,255,.4) 49%,transparent 50%),linear-gradient(100deg,transparent 73%,rgba(255,255,255,.35) 74%,transparent 75%);
+}
+.asu-button:hover{
+  transform:translateY(-3px) scale(1.04);border-color:rgba(220,0,40,1);
+  text-shadow:2px 0 #ff0033,-2px 0 #9000ff,0 0 12px rgba(255,0,51,.55);
+  box-shadow:0 0 24px rgba(200,0,30,.7),0 0 52px rgba(140,0,20,.45),0 0 80px rgba(80,0,60,.25),inset 0 1px 0 rgba(255,60,80,.15),inset 0 -1px 0 rgba(80,0,10,.6),0 2px 32px rgba(0,0,0,.9);
+  animation:glitchText .35s steps(2,end) infinite;
+}
 .asu-button:hover::before{inset:-26px;filter:blur(24px);opacity:1}
 .tentacle{position:absolute;bottom:-2px;width:4px;height:0;border-radius:999px;background:linear-gradient(to bottom,rgba(139,0,0,.9),rgba(74,0,16,.7),rgba(26,0,5,.1));opacity:0;transform-origin:top center;pointer-events:none;transition:height .5s cubic-bezier(.23,1,.32,1),opacity .4s;z-index:-1;filter:blur(.2px)}
 .asu-button:hover .tentacle{opacity:.85}
@@ -19,101 +172,30 @@ body{min-height:100vh;background:#030000;color:white;font-family:Arial,sans-seri
 .asu-button:hover .tentacle:nth-child(5){height:31px;left:64%;transform:rotate(-14deg);transition-delay:.18s}
 .asu-button:hover .tentacle:nth-child(6){height:39px;left:77%;transform:rotate(18deg);transition-delay:.22s}
 .asu-button:hover .tentacle:nth-child(7){height:28px;left:90%;transform:rotate(-25deg);transition-delay:.26s}
-@keyframes glitchText{0%{letter-spacing:.2em}30%{letter-spacing:.23em}60%{letter-spacing:.18em}100%{letter-spacing:.2em}}
-.home-panel{width:min(850px,calc(100% - 32px));margin:95px auto 0;padding:35px;border:1px solid rgba(180,0,30,.35);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);box-shadow:0 0 45px rgba(140,0,20,.18)}
+
+.home-panel{width:min(850px,calc(100% - 32px));margin:95px auto 60px;padding:35px;border:1px solid rgba(180,0,30,.35);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);box-shadow:0 0 45px rgba(140,0,20,.18);position:relative;z-index:2}
 .archive-label{color:#ff334f;font-weight:900;letter-spacing:.18em;margin-bottom:15px}
 .home-panel h2{font-size:clamp(2rem,5vw,4rem);margin-bottom:15px}
 .home-panel p{color:#d6d6d6;line-height:1.7;font-size:1.05rem}
-@media(max-width:720px){.nav-row{gap:18px}.asu-button{min-width:260px}}
-#asu-logo{
-    position:relative;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    margin-bottom:50px;
-}
-.logo-wrap{
-    text-align:center;
-    position:relative;
-}
 
-.eye-ring{
-    width:120px;
-    height:120px;
-    border:2px solid crimson;
-    border-radius:50%;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    animation:spin 30s linear infinite;
-    box-shadow:0 0 25px crimson;
-}
+@keyframes asu-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes asu-emblem-glow{0%,100%{filter:drop-shadow(0 0 7px #dc143c) drop-shadow(0 0 18px #7b0000)}50%{filter:drop-shadow(0 0 3px #dc143c) drop-shadow(0 0 10px #550040)}}
+@keyframes asu-flicker{0%,80%,100%{opacity:1}81%{opacity:.88}82%{opacity:1}85%{opacity:.72}86%{opacity:1}90%{opacity:.92}91%{opacity:.78}92%{opacity:1}95%{opacity:.85}96%{opacity:1}}
+@keyframes asu-glow{0%,100%{text-shadow:0 0 8px #dc143c,0 0 22px #9b0000,0 0 50px #4a0000}50%{text-shadow:0 0 5px #dc143c,0 0 14px #8b0000,0 0 32px #3a0000}}
+@keyframes asu-sub-glow{0%,100%{text-shadow:0 0 7px #8800aa,0 0 18px #5a0060;color:#5a005a}50%{text-shadow:0 0 3px #660088,0 0 10px #440050;color:#440044}}
+@keyframes asu-diamond-pulse{0%,100%{box-shadow:0 0 8px #dc143c,0 0 16px #8b0000}50%{box-shadow:0 0 3px #dc143c,0 0 8px #6b0000}}
+@keyframes asu-shake{0%,100%{transform:translate(0,0) skewX(0deg)}12%{transform:translate(-7px,0) skewX(-1.5deg)}25%{transform:translate(6px,1px) skewX(1deg)}37%{transform:translate(-3px,-1px)}50%{transform:translate(5px,0) skewX(-.5deg)}62%{transform:translate(0,0)}75%{transform:translate(-4px,0) skewX(.5deg)}87%{transform:translate(3px,0)}}
+@keyframes asu-shift-r{0%,100%{transform:translate(-7px,1px)}50%{transform:translate(-10px,-1px)}}
+@keyframes asu-shift-b{0%,100%{transform:translate(7px,-1px)}50%{transform:translate(10px,1px)}}
+@keyframes asu-hidden-bg{0%,100%{background:#000}30%{background:#0d0000}65%{background:#000}}
+@keyframes asu-blink{0%,100%{opacity:.5}50%{opacity:0}}
+@keyframes asu-msg-glitch{0%,65%,100%{transform:translate(0,0)}67%{transform:translate(-5px,0)}69%{transform:translate(5px,0)}71%{transform:translate(0,0)}73%{transform:translate(-3px,1px)}75%{transform:translate(0,0)}}
+@keyframes asu-static{0%,100%{opacity:.75;transform:scaleX(1)}50%{opacity:.4;transform:scaleX(1.03) translateX(-3px)}}
+@keyframes glitchText{0%{letter-spacing:.2em}30%{letter-spacing:.23em}60%{letter-spacing:.18em}100%{letter-spacing:.2em}}
 
-.eye{
-    width:70px;
-    height:35px;
-    background:black;
-    border:2px solid crimson;
-    border-radius:50%;
-    position:relative;
-}
-
-.eye::after{
-    content:"";
-    width:18px;
-    height:18px;
-    background:crimson;
-    border-radius:50%;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    box-shadow:0 0 20px crimson;
-}
-
-.anime-label{
-    margin-top:12px;
-    color:#700;
-    letter-spacing:10px;
-}
-
-.main-logo{
-    font-size:7rem;
-    color:#ff1744;
-    text-shadow:
-        0 0 20px red,
-        0 0 40px crimson;
-    margin:0;
-}
-
-.sub-logo{
-    color:purple;
-    letter-spacing:15px;
-}
-
-.divider{
-    width:400px;
-    max-width:80%;
-    height:2px;
-    background:linear-gradient(to right,transparent,crimson,transparent);
-    margin:20px auto;
-}
-
-.hidden-message{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    color:red;
-    font-size:2rem;
-    text-shadow:0 0 20px red;
-    opacity:0;
-    transition:.2s;
-    pointer-events:none;
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
+@media(max-width:720px){
+  .asu-header{padding-top:36px}
+  .nav-row{gap:18px}
+  .asu-button{min-width:260px}
+  .asu-title-main,.asu-title-r,.asu-title-b{font-size:clamp(52px,19vw,86px)}
 }
