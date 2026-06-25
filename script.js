@@ -118,3 +118,20 @@ function fireSecretMessage() {
 }
 
 setTimeout(fireSecretMessage, 3500);
+
+/* Random archive quote */
+const creepyQuotes = [
+  "The archive remembers everything.",
+  "He is always watching.",
+  "Some contestants never left.",
+  "Not all eliminations are permanent.",
+  "The votes were counted before the challenge began.",
+  "You were not cleared to read this file.",
+  "The arena hears every confession.",
+  "One name was removed from the cast list."
+];
+
+const quote = document.getElementById("creepyQuote");
+if (quote) {
+  quote.textContent = creepyQuotes[Math.floor(Math.random() * creepyQuotes.length)];
+}
