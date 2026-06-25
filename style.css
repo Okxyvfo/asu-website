@@ -1,23 +1,27 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
-}
-
-h1 {
-    color: crimson;
-}
-#bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -999;
-    pointer-events: none;
-}
-
-body {
-    background: #030000;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#030000;color:white;font-family:Arial,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-999;pointer-events:none}
+.asu-header{width:min(1250px,calc(100% - 32px));margin:0 auto;padding-top:60px;text-align:center}
+.asu-title{font-size:clamp(2.4rem,7vw,5.5rem);letter-spacing:.12em;color:white;text-shadow:0 0 12px rgba(255,0,40,.9),0 0 30px rgba(160,0,0,.7),0 0 55px rgba(80,0,80,.55);margin-bottom:35px}
+.asu-nav{display:flex;flex-direction:column;align-items:center;gap:28px}
+.nav-row{display:flex;justify-content:center;flex-wrap:wrap;gap:35px}
+.asu-button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;min-width:220px;height:52px;padding:0 40px;border-radius:999px;border:2px solid rgba(180,0,30,.7);color:white;text-decoration:none;font-weight:900;font-size:1.05rem;letter-spacing:.2em;white-space:nowrap;overflow:visible;background:linear-gradient(135deg,rgba(12,0,4,.98) 0%,rgba(28,2,10,.96) 30%,rgba(60,3,18,.9) 55%,rgba(20,0,8,.98) 80%,rgba(8,0,3,1) 100%);box-shadow:0 0 10px rgba(140,0,20,.3),0 0 24px rgba(80,0,20,.15),inset 0 1px 0 rgba(255,40,60,.08),inset 0 -1px 0 rgba(60,0,10,.5),0 2px 24px rgba(0,0,0,.8);backdrop-filter:blur(8px);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,text-shadow .25s ease}
+.asu-button::before{content:"";position:absolute;inset:-8px;z-index:-2;border-radius:999px;background:radial-gradient(ellipse at center,rgba(139,0,0,.18) 0%,rgba(80,0,30,.08) 50%,transparent 75%);filter:blur(12px);opacity:.8;transition:.25s ease}
+.asu-button::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.18;mix-blend-mode:screen;background:linear-gradient(80deg,transparent 5%,rgba(255,255,255,.45) 6%,transparent 7%),linear-gradient(100deg,transparent 23%,rgba(255,255,255,.35) 24%,transparent 25%),linear-gradient(84deg,transparent 48%,rgba(255,255,255,.4) 49%,transparent 50%),linear-gradient(100deg,transparent 73%,rgba(255,255,255,.35) 74%,transparent 75%)}
+.asu-button:hover{transform:translateY(-3px) scale(1.04);border-color:rgba(220,0,40,1);text-shadow:2px 0 #ff0033,-2px 0 #9000ff,0 0 12px rgba(255,0,51,.55);box-shadow:0 0 24px rgba(200,0,30,.7),0 0 52px rgba(140,0,20,.45),0 0 80px rgba(80,0,60,.25),inset 0 1px 0 rgba(255,60,80,.15),inset 0 -1px 0 rgba(80,0,10,.6),0 2px 32px rgba(0,0,0,.9);animation:glitchText .35s steps(2,end) infinite}
+.asu-button:hover::before{inset:-26px;filter:blur(24px);opacity:1}
+.tentacle{position:absolute;bottom:-2px;width:4px;height:0;border-radius:999px;background:linear-gradient(to bottom,rgba(139,0,0,.9),rgba(74,0,16,.7),rgba(26,0,5,.1));opacity:0;transform-origin:top center;pointer-events:none;transition:height .5s cubic-bezier(.23,1,.32,1),opacity .4s;z-index:-1;filter:blur(.2px)}
+.asu-button:hover .tentacle{opacity:.85}
+.asu-button:hover .tentacle:nth-child(1){height:26px;left:10%;transform:rotate(24deg);transition-delay:.02s}
+.asu-button:hover .tentacle:nth-child(2){height:36px;left:23%;transform:rotate(-18deg);transition-delay:.06s}
+.asu-button:hover .tentacle:nth-child(3){height:30px;left:36%;transform:rotate(12deg);transition-delay:.1s}
+.asu-button:hover .tentacle:nth-child(4){height:44px;left:50%;transform:rotate(-4deg);transition-delay:.14s}
+.asu-button:hover .tentacle:nth-child(5){height:31px;left:64%;transform:rotate(-14deg);transition-delay:.18s}
+.asu-button:hover .tentacle:nth-child(6){height:39px;left:77%;transform:rotate(18deg);transition-delay:.22s}
+.asu-button:hover .tentacle:nth-child(7){height:28px;left:90%;transform:rotate(-25deg);transition-delay:.26s}
+@keyframes glitchText{0%{letter-spacing:.2em}30%{letter-spacing:.23em}60%{letter-spacing:.18em}100%{letter-spacing:.2em}}
+.home-panel{width:min(850px,calc(100% - 32px));margin:95px auto 0;padding:35px;border:1px solid rgba(180,0,30,.35);background:rgba(0,0,0,.52);backdrop-filter:blur(10px);box-shadow:0 0 45px rgba(140,0,20,.18)}
+.archive-label{color:#ff334f;font-weight:900;letter-spacing:.18em;margin-bottom:15px}
+.home-panel h2{font-size:clamp(2rem,5vw,4rem);margin-bottom:15px}
+.home-panel p{color:#d6d6d6;line-height:1.7;font-size:1.05rem}
+@media(max-width:720px){.nav-row{gap:18px}.asu-button{min-width:260px}}
