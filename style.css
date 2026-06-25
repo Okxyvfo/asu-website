@@ -32,3 +32,88 @@ body{min-height:100vh;background:#030000;color:white;font-family:Arial,sans-seri
     justify-content:center;
     margin-bottom:50px;
 }
+.logo-wrap{
+    text-align:center;
+    position:relative;
+}
+
+.eye-ring{
+    width:120px;
+    height:120px;
+    border:2px solid crimson;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:spin 30s linear infinite;
+    box-shadow:0 0 25px crimson;
+}
+
+.eye{
+    width:70px;
+    height:35px;
+    background:black;
+    border:2px solid crimson;
+    border-radius:50%;
+    position:relative;
+}
+
+.eye::after{
+    content:"";
+    width:18px;
+    height:18px;
+    background:crimson;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 20px crimson;
+}
+
+.anime-label{
+    margin-top:12px;
+    color:#700;
+    letter-spacing:10px;
+}
+
+.main-logo{
+    font-size:7rem;
+    color:#ff1744;
+    text-shadow:
+        0 0 20px red,
+        0 0 40px crimson;
+    margin:0;
+}
+
+.sub-logo{
+    color:purple;
+    letter-spacing:15px;
+}
+
+.divider{
+    width:400px;
+    max-width:80%;
+    height:2px;
+    background:linear-gradient(to right,transparent,crimson,transparent);
+    margin:20px auto;
+}
+
+.hidden-message{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:red;
+    font-size:2rem;
+    text-shadow:0 0 20px red;
+    opacity:0;
+    transition:.2s;
+    pointer-events:none;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
