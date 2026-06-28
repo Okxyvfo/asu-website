@@ -979,4 +979,217 @@ body {
         transform:none;
     }
 }
+/* ADAM SMASHER CHARACTER PAGE */
+
+.adam-file-page{
+  width:min(1200px,calc(100% - 32px));
+  margin:50px auto 90px;
+  position:relative;
+  z-index:2;
+}
+
+.adam-name-logo{
+  position:relative;
+  margin:40px auto 70px;
+  padding:42px 20px 34px;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid rgba(255,0,0,.45);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.12) 0px,
+      rgba(255,255,255,.12) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    rgba(255,255,255,.03);
+  box-shadow:
+    0 0 35px rgba(255,0,0,.25),
+    inset 0 0 45px rgba(255,0,0,.08);
+}
+
+.adam-name-logo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent,rgba(255,0,0,.12),transparent);
+  animation:adamScan 3s linear infinite;
+}
+
+.adam-name-logo::after{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border:2px solid rgba(255,0,0,.45);
+  pointer-events:none;
+  clip-path:polygon(
+    0 0, 10% 0, 10% 3px, 3px 3px, 3px 10%, 0 10%,
+    0 90%, 3px 90%, 3px calc(100% - 3px), 10% calc(100% - 3px), 10% 100%, 0 100%,
+    90% 100%, 90% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 90%, 100% 90%,
+    100% 10%, calc(100% - 3px) 10%, calc(100% - 3px) 3px, 90% 3px, 90% 0, 100% 0
+  );
+}
+
+.adam-code{
+  color:#ff5b5b;
+  font-size:.78rem;
+  letter-spacing:.32em;
+  margin-bottom:18px;
+  opacity:.75;
+  font-family:"Courier New",monospace;
+}
+
+.adam-name-logo h1{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin:0;
+  font-family:Impact,"Arial Black",sans-serif;
+}
+
+.adam-name-logo h1 span{
+  font-size:clamp(4.2rem,13vw,10.5rem);
+  line-height:.72;
+  color:#111;
+  -webkit-text-stroke:2px #9b0000;
+  text-shadow:
+    0 0 4px #ff0000,
+    0 0 14px rgba(255,0,0,.9),
+    0 0 34px rgba(255,0,0,.45);
+  letter-spacing:.035em;
+  animation:adamLogoGlitch 5s infinite;
+}
+
+.adam-name-logo h1 span:first-child{
+  transform:skewX(-4deg);
+}
+
+.adam-name-logo h1 span:last-child{
+  transform:skewX(-3deg);
+}
+
+.adam-hero{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+  margin-bottom:60px;
+}
+
+.adam-render{
+  width:100%;
+  max-width:520px;
+  filter:
+    drop-shadow(0 0 30px rgba(255,0,0,.35))
+    drop-shadow(0 20px 20px rgba(0,0,0,.8));
+}
+
+.adam-info h2{
+  font-size:clamp(3rem,8vw,6.5rem);
+  line-height:.9;
+  color:white;
+  text-shadow:
+    0 0 10px red,
+    0 0 30px darkred;
+  margin-bottom:25px;
+}
+
+.restricted-tag{
+  color:#ff0033;
+  font-weight:900;
+  letter-spacing:.25em;
+  margin-bottom:18px;
+}
+
+.adam-stats p{
+  font-size:1.15rem;
+  margin-bottom:12px;
+}
+
+.adam-warning{
+  margin-top:35px;
+  color:#ff0033;
+  font-weight:900;
+  letter-spacing:.2em;
+  text-shadow:0 0 14px red;
+  animation:adamFlicker 1.8s infinite;
+}
+
+.character-section{
+  background:rgba(0,0,0,.58);
+  border:1px solid rgba(255,0,0,.3);
+  padding:35px;
+  margin-bottom:32px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px rgba(255,0,0,.08);
+}
+
+.character-section h2{
+  color:#ff3355;
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+.character-section h3{
+  margin-top:22px;
+  margin-bottom:10px;
+}
+
+.character-section p,
+.character-section li{
+  color:#d6d6d6;
+  line-height:1.8;
+}
+
+.character-section blockquote{
+  font-size:1.6rem;
+  font-style:italic;
+  color:white;
+  border-left:4px solid red;
+  padding-left:20px;
+}
+
+.restricted-section{
+  border:2px solid rgba(255,0,0,.55);
+  box-shadow:0 0 35px rgba(255,0,0,.2);
+}
+
+@keyframes adamScan{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(100%)}
+}
+
+@keyframes adamLogoGlitch{
+  0%,88%,100%{
+    transform:translate(0,0) skewX(-3deg);
+  }
+  89%{
+    transform:translate(-5px,2px) skewX(-8deg);
+    text-shadow:5px 0 #ff0000,-5px 0 #650000;
+  }
+  90%{
+    transform:translate(5px,-2px) skewX(2deg);
+  }
+  91%{
+    transform:translate(0,0) skewX(-3deg);
+  }
+}
+
+@keyframes adamFlicker{
+  0%,100%{opacity:1}
+  48%{opacity:.5}
+  50%{opacity:.1}
+  52%{opacity:1}
+}
+
+@media(max-width:850px){
+  .adam-hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
 
