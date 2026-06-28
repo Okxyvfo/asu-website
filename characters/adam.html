@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Adam Smasher | ASU Archive</title>
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -15,23 +16,33 @@
 
     <div class="character-header">
 
-        <img src="../characters/adami.png"
-             class="character-render">
-
-        <div class="character-info">
+        <div class="character-image-side">
 
             <img src="../logos/adam-emblem.png"
                  class="character-logo">
 
-            <h1>ADAM SMASHER</h1>
+            <img src="../characters/adami.png"
+                 class="character-render">
 
-            <p class="archive-status">
+        </div>
+
+        <div class="character-info">
+
+            <p class="character-status">
                 █ RESTRICTED FILE █
             </p>
 
-            <p><strong>Actor:</strong> YOUR ACTOR</p>
-            <p><strong>Team:</strong> TEAM NAME</p>
-            <p><strong>Status:</strong> SAFE</p>
+            <h1>ADAM SMASHER</h1>
+
+            <div class="character-stats">
+                <p><strong>Actor:</strong> YOUR ACTOR</p>
+                <p><strong>Team:</strong> TEAM NAME</p>
+                <p><strong>Status:</strong> SAFE</p>
+            </div>
+
+            <div class="glitch-message">
+                ACCESS LEVEL: OMEGA
+            </div>
 
         </div>
 
@@ -43,11 +54,109 @@
         <p>
             Adam Smasher is feared by almost everyone on the island.
             He rarely talks to the other contestants and prefers to
-            keep to himself.
+            keep to himself. Unknown to most contestants, Adam is
+            secretly working for the Host.
         </p>
     </section>
 
+    <section class="character-section">
+        <h2>Quote</h2>
+
+        <blockquote>
+            "You look like a cut of fuckable meat."
+        </blockquote>
+    </section>
+
+    <section class="character-section">
+
+        <h2>How They Arrived</h2>
+
+        <h3>Before ASU</h3>
+
+        <p>
+            Adam was carrying out another mission in Night City
+            when time suddenly stopped around him.
+        </p>
+
+        <h3>Arrival</h3>
+
+        <p>
+            Unlike the other contestants, Adam was taken long
+            before the show began. The Host offered him any wish
+            he desired if he agreed to work for him. Adam accepted.
+        </p>
+
+    </section>
+
+    <section class="character-section">
+
+        <h2>Current Story</h2>
+
+        <p>
+            Adam secretly feeds information to the Host while
+            pretending to simply be another contestant. Nobody
+            besides the Exit Team knows about his deal.
+        </p>
+
+    </section>
+
+    <section class="character-section">
+
+        <h2>Relationships</h2>
+
+        <h3>Allies</h3>
+
+        <ul>
+            <li><strong>The Host</strong> — Adam works directly for him.</li>
+        </ul>
+
+        <h3>Rivals</h3>
+
+        <ul>
+            <li><strong>Escanor</strong> — The two constantly challenge each other.</li>
+        </ul>
+
+        <h3>Enemies</h3>
+
+        <ul>
+            <li><strong>Joker</strong> — Joker does not trust Adam.</li>
+            <li><strong>Law</strong> — Law believes Adam is hiding something.</li>
+        </ul>
+
+    </section>
+
+    <section class="character-section restricted-section">
+
+        <h2>Lore</h2>
+
+        <p>
+            WARNING: FILE CORRUPTION DETECTED.
+        </p>
+
+        <p>
+            Adam Smasher was the first contestant taken by the Host.
+            The details of their agreement remain unknown.
+        </p>
+
+    </section>
+
 </div>
+
+<script>
+const messages = [
+"HE IS ALWAYS WATCHING",
+"YOU ARE NOT SUPPOSED TO BE HERE",
+"SIGNAL INTERRUPTED",
+"ACCESS REVOKED",
+"UNAUTHORIZED ACCESS DETECTED"
+];
+
+setInterval(() => {
+    const box = document.querySelector(".glitch-message");
+    box.textContent =
+        messages[Math.floor(Math.random()*messages.length)];
+}, 5000);
+</script>
 
 </body>
 </html>
