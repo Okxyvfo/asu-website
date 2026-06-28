@@ -5,19 +5,140 @@
   <title>Adam Smasher | ASU Archive</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+
+<body class="adam-page-body">
 
   <main class="adam-file-page">
 
     <a href="../contestants.html" class="back-home">← BACK TO ARCHIVE</a>
 
-    <section class="adam-name-logo">
-      <div class="logo-corners"></div>
-      <p class="adam-code">0xA4-3C — NEURAL LINK ACTIVE — HK_VT_FULL_BORG</p>
-      <h1>
-        <span>ADAM</span>
-        <span>SMASHER</span>
-      </h1>
+    <!-- Adam's scripted animated name logo -->
+    <section class="adam-smasher-root" id="adamLogo">
+      <div class="logo-svg-wrap" id="adamLogoWrap">
+
+        <div class="scanlines"></div>
+        <div class="glitch-slice" id="glitchSlice"></div>
+
+        <svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" width="860" class="adam-logo-svg">
+          <defs>
+            <linearGradient id="darkChrome" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3a3a3a"/>
+              <stop offset="30%" stop-color="#1c1c1c"/>
+              <stop offset="55%" stop-color="#0a0a0a"/>
+              <stop offset="75%" stop-color="#222222"/>
+              <stop offset="100%" stop-color="#080808"/>
+            </linearGradient>
+
+            <linearGradient id="redEdge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ff4444" stop-opacity="0.9"/>
+              <stop offset="40%" stop-color="#cc0000" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#660000" stop-opacity="0.5"/>
+            </linearGradient>
+
+            <linearGradient id="dividerGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#330000" stop-opacity="0"/>
+              <stop offset="20%" stop-color="#ff2020" stop-opacity="0.8"/>
+              <stop offset="50%" stop-color="#ff4444" stop-opacity="1"/>
+              <stop offset="80%" stop-color="#ff2020" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#330000" stop-opacity="0"/>
+            </linearGradient>
+
+            <filter id="glowRed" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feFlood flood-color="#cc0000" flood-opacity="0.6" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+
+            <filter id="glowRedBright" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="10" result="blur"/>
+              <feFlood flood-color="#ff0000" flood-opacity="0.8" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+
+            <filter id="outerGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="18" result="blur"/>
+              <feFlood flood-color="#cc0000" flood-opacity="0.35" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+
+            <filter id="staticNoise" x="0%" y="0%" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2" result="noise"/>
+              <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+              <feBlend in="SourceGraphic" in2="gray" mode="overlay" result="blend"/>
+              <feComponentTransfer in="blend">
+                <feFuncA type="linear" slope="1"/>
+              </feComponentTransfer>
+            </filter>
+
+            <clipPath id="logoClip">
+              <rect x="0" y="0" width="860" height="340"/>
+            </clipPath>
+          </defs>
+
+          <g clip-path="url(#logoClip)">
+            <ellipse cx="430" cy="180" rx="360" ry="100" fill="none" stroke="#cc0000" stroke-width="1" opacity="0.08" filter="url(#glowRed)"/>
+
+            <path d="M 30 20 L 30 50 M 30 20 L 68 20" class="corner-mark"/>
+            <path d="M 830 20 L 830 50 M 830 20 L 792 20" class="corner-mark"/>
+            <path d="M 30 320 L 30 290 M 30 320 L 68 320" class="corner-mark"/>
+            <path d="M 830 320 L 830 290 M 830 320 L 792 320" class="corner-mark"/>
+
+            <g class="tick-marks">
+              <line x1="14" y1="60" x2="26" y2="60"/><line x1="14" y1="100" x2="26" y2="100"/>
+              <line x1="14" y1="140" x2="26" y2="140"/><line x1="14" y1="180" x2="26" y2="180"/>
+              <line x1="14" y1="220" x2="26" y2="220"/><line x1="14" y1="260" x2="26" y2="260"/>
+              <line x1="14" y1="300" x2="26" y2="300"/>
+              <line x1="834" y1="60" x2="846" y2="60"/><line x1="834" y1="100" x2="846" y2="100"/>
+              <line x1="834" y1="140" x2="846" y2="140"/><line x1="834" y1="180" x2="846" y2="180"/>
+              <line x1="834" y1="220" x2="846" y2="220"/><line x1="834" y1="260" x2="846" y2="260"/>
+              <line x1="834" y1="300" x2="846" y2="300"/>
+            </g>
+
+            <line x1="60" y1="26" x2="800" y2="26" stroke="#440000" stroke-width="0.5" opacity="0.7"/>
+            <line x1="80" y1="30" x2="780" y2="30" stroke="#880000" stroke-width="0.5" opacity="0.4"/>
+
+            <text x="430" y="165" class="title-adam outer-adam" id="adamOuter">ADAM</text>
+            <text x="434" y="167" class="title-adam glitch-ghost" id="adamGhost">ADAM</text>
+            <text x="430" y="165" class="title-adam glow-layer" id="adamMain">ADAM</text>
+            <text x="430" y="165" class="title-adam flicker-layer" id="adamEdge">ADAM</text>
+
+            <line x1="60" y1="188" x2="800" y2="188" class="divider-line"/>
+            <line x1="100" y1="192" x2="760" y2="192" stroke="#440000" stroke-width="0.5" opacity="0.5"/>
+
+            <text x="430" y="208" class="subtitle-text" id="adamCode">0xA4:3C — NEURAL_LINK_ACTIVE — MK.VI FULL BORG</text>
+
+            <text x="430" y="300" class="title-smasher outer-smasher" id="smasherOuter">SMASHER</text>
+            <text x="427" y="298" class="title-smasher glitch-ghost" id="smasherGhost">SMASHER</text>
+            <text x="430" y="300" class="title-smasher glow-layer" id="smasherMain">SMASHER</text>
+            <text x="430" y="300" class="title-smasher flicker-layer" id="smasherEdge">SMASHER</text>
+
+            <circle cx="200" cy="188" r="2" fill="#ff2020" opacity="0.8" filter="url(#glowRed)"/>
+            <circle cx="320" cy="188" r="2" fill="#ff2020" opacity="0.8" filter="url(#glowRed)"/>
+            <circle cx="430" cy="188" r="2" fill="#ff2020" opacity="0.8" filter="url(#glowRed)"/>
+            <circle cx="540" cy="188" r="2" fill="#ff2020" opacity="0.8" filter="url(#glowRed)"/>
+            <circle cx="660" cy="188" r="2" fill="#ff2020" opacity="0.8" filter="url(#glowRed)"/>
+
+            <g id="sparkLayer"></g>
+
+            <line x1="80" y1="314" x2="780" y2="314" stroke="#440000" stroke-width="0.5" opacity="0.6"/>
+            <line x1="60" y1="318" x2="800" y2="318" stroke="#660000" stroke-width="0.5" opacity="0.4"/>
+
+            <rect x="0" y="0" width="860" height="340" fill="transparent" filter="url(#staticNoise)" opacity="0.03"/>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <section class="adam-hero">
@@ -110,6 +231,116 @@
   </main>
 
   <script>
+    const GLITCH_CHARS = "!<>-_\\\\/[]{}—=+*^?#░▒▓█▄▀";
+
+    const logoWrap = document.getElementById("adamLogoWrap");
+    const glitchSlice = document.getElementById("glitchSlice");
+    const sparkLayer = document.getElementById("sparkLayer");
+
+    const adamTextNodes = [
+      document.getElementById("adamOuter"),
+      document.getElementById("adamGhost"),
+      document.getElementById("adamMain"),
+      document.getElementById("adamEdge")
+    ];
+
+    const smasherTextNodes = [
+      document.getElementById("smasherOuter"),
+      document.getElementById("smasherGhost"),
+      document.getElementById("smasherMain"),
+      document.getElementById("smasherEdge")
+    ];
+
+    function randomChar() {
+      return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+    }
+
+    function scrambleText(original, frame) {
+      return original
+        .split("")
+        .map((ch, i) => {
+          if (ch === " ") return " ";
+          if (i < frame / 3) return ch;
+          return randomChar();
+        })
+        .join("");
+    }
+
+    function setText(nodes, value) {
+      nodes.forEach(node => node.textContent = value);
+    }
+
+    function makeSparks() {
+      sparkLayer.innerHTML = "";
+
+      for (let i = 0; i < 12; i++) {
+        const spark = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        const cx = 200 + Math.floor(i * 40);
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 10 + Math.random() * 25;
+        const dx = Math.cos(angle) * dist;
+        const dy = Math.sin(angle) * dist;
+
+        spark.setAttribute("cx", cx);
+        spark.setAttribute("cy", 185);
+        spark.setAttribute("r", 1 + Math.random());
+        spark.setAttribute("fill", "#ff3333");
+        spark.style.setProperty("--dx", `${dx}px`);
+        spark.style.setProperty("--dy", `${dy}px`);
+        spark.style.setProperty("--dur", `${0.3 + Math.random() * 0.4}s`);
+        spark.style.setProperty("--del", `${Math.random() * 0.1}s`);
+        spark.classList.add("spark");
+
+        sparkLayer.appendChild(spark);
+      }
+
+      setTimeout(() => {
+        sparkLayer.innerHTML = "";
+      }, 900);
+    }
+
+    function glitchBurst() {
+      let frame = 0;
+      const totalFrames = "SMASHER".length * 3;
+      const shift = Math.random() > 0.5 ? 1 : -1;
+
+      logoWrap.style.transform = `translateX(${shift * 5}px)`;
+      glitchSlice.classList.add("active");
+      document.querySelectorAll(".glitch-ghost").forEach(el => el.classList.add("active"));
+      document.getElementById("adamCode").textContent = "01001110 ░▒█ ERR_SIG_CORRUPT ▒░ 10110100";
+      makeSparks();
+
+      const run = () => {
+        frame++;
+
+        setText(adamTextNodes, scrambleText("ADAM", frame));
+        setText(smasherTextNodes, scrambleText("SMASHER", frame));
+
+        if (frame < totalFrames) {
+          requestAnimationFrame(run);
+        } else {
+          setText(adamTextNodes, "ADAM");
+          setText(smasherTextNodes, "SMASHER");
+
+          setTimeout(() => {
+            logoWrap.style.transform = "none";
+            glitchSlice.classList.remove("active");
+            document.querySelectorAll(".glitch-ghost").forEach(el => el.classList.remove("active"));
+            document.getElementById("adamCode").textContent = "0xA4:3C — NEURAL_LINK_ACTIVE — MK.VI FULL BORG";
+            scheduleGlitch();
+          }, 250);
+        }
+      };
+
+      requestAnimationFrame(run);
+    }
+
+    function scheduleGlitch() {
+      setTimeout(glitchBurst, 2000 + Math.random() * 4000);
+    }
+
+    scheduleGlitch();
+
     const warnings = [
       "HE IS ALWAYS WATCHING",
       "ACCESS REVOKED",
