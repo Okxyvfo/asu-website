@@ -727,3 +727,137 @@ body {
 .contestant-card.joker,.contestant-card.frieza,.contestant-card.gojo{border-color:rgba(150,0,255,.45)}
 @media(max-width:650px){.contestant-card{min-height:340px}}
 
+/* CHARACTER PAGES */
+
+.character-page{
+    width:min(1200px,calc(100% - 32px));
+    margin:60px auto;
+    position:relative;
+    z-index:2;
+}
+
+.character-header{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    margin-bottom:60px;
+    flex-wrap:wrap;
+}
+
+.character-image-side{
+    flex:1;
+    min-width:300px;
+    text-align:center;
+}
+
+.character-logo{
+    width:200px;
+    margin-bottom:30px;
+    filter:
+        drop-shadow(0 0 20px rgba(255,0,0,.8));
+}
+
+.character-render{
+    width:100%;
+    max-width:450px;
+    filter:
+        drop-shadow(0 0 25px rgba(255,0,0,.5));
+}
+
+.character-info{
+    flex:1;
+    min-width:350px;
+}
+
+.character-info h1{
+    font-size:clamp(3rem,8vw,6rem);
+    margin-bottom:20px;
+    text-shadow:
+        0 0 10px red,
+        0 0 30px darkred;
+}
+
+.character-status{
+    color:#ff0033;
+    font-weight:900;
+    letter-spacing:.2em;
+    margin-bottom:20px;
+}
+
+.character-stats{
+    margin-bottom:30px;
+}
+
+.character-stats p{
+    margin-bottom:12px;
+    font-size:1.1rem;
+}
+
+.glitch-message{
+    color:#ff0033;
+    font-weight:900;
+    letter-spacing:.15em;
+    text-shadow:0 0 12px red;
+    animation:flicker 2s infinite;
+}
+
+.character-section{
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,0,0,.3);
+    padding:35px;
+    margin-bottom:35px;
+    backdrop-filter:blur(10px);
+    box-shadow:
+        0 0 25px rgba(255,0,0,.08);
+}
+
+.character-section h2{
+    color:#ff3355;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.character-section h3{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.character-section p,
+.character-section li{
+    color:#d6d6d6;
+    line-height:1.8;
+}
+
+.character-section blockquote{
+    font-size:1.6rem;
+    font-style:italic;
+    color:white;
+    border-left:4px solid red;
+    padding-left:20px;
+}
+
+.restricted-section{
+    border:2px solid rgba(255,0,0,.7);
+    box-shadow:
+        0 0 35px rgba(255,0,0,.3);
+}
+
+@keyframes flicker{
+    0%,100%{opacity:1}
+    50%{opacity:.5}
+    52%{opacity:.1}
+    54%{opacity:1}
+}
+
+@media(max-width:850px){
+
+.character-header{
+    text-align:center;
+}
+
+.character-info{
+    min-width:100%;
+}
+
+}
+
