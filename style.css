@@ -1932,6 +1932,28 @@ body {
   color: #ff0033;
   text-shadow: 0 0 14px red;
 }
+/* ===== HOTLOG 003 EXTRA STYLING ===== */
+.discovery-hotlog {
+  border-color: rgba(255,0,0,.7);
+  box-shadow: 0 0 48px rgba(255,0,0,.18), inset 0 0 35px rgba(255,0,0,.05);
+}
+
+.discovery-hotlog .transcript p {
+  border-left: 2px solid rgba(255,0,0,.10);
+  padding-left: 14px;
+}
+
+.discovery-hotlog .host {
+  color: #ff0033;
+  text-shadow: 0 0 14px red;
+}
+
+.discovery-hotlog .joker { color: #c46cff; }
+.discovery-hotlog .law { color: #7dd7ff; }
+.discovery-hotlog .gyro { color: #d6c266; }
+.discovery-hotlog .frieza { color: #ff75e6; }
+.discovery-hotlog .david { color: #ffb36c; }
+
 
 
 
