@@ -238,27 +238,31 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
   </main>
 
   <script>
-    const input = document.getElementById("loreCodeInput");
-    const button = document.getElementById("loreCodeButton");
-    const result = document.getElementById("terminalResult");
+  const input = document.getElementById("loreCodeInput");
+  const button = document.getElementById("loreCodeButton");
+  const result = document.getElementById("terminalResult");
 
-    button.addEventListener("click", () => {
-      const code = input.value.trim().toUpperCase();
+  button.addEventListener("click", () => {
+    const code = input.value.trim().toUpperCase();
 
-      if (!code) {
-        result.textContent = "NO CODE ENTERED.";
-        return;
-      }
+    if (!code) {
+      result.textContent = "NO CODE ENTERED.";
+      return;
+    }
 
-      if (code === "HOST") {
-        result.textContent = "ACCESS DENIED. HE IS ALREADY WATCHING.";
-      } else if (code === "EXIT") {
-        result.textContent = "PARTIAL MATCH FOUND. EXIT TEAM FILE REMAINS LOCKED.";
-      } else {
-        result.textContent = "INVALID CODE. ATTEMPT RECORDED.";
-      }
-    });
-  </script>
-
+    if (code === "PEACEWARP") {
+      result.textContent = "ACCESS GRANTED. OPENING HOTLOG FILES...";
+      setTimeout(() => {
+        window.location.href = "hotlogs.html";
+      }, 1200);
+    } else if (code === "HOST") {
+      result.textContent = "ACCESS DENIED. HE IS ALREADY WATCHING.";
+    } else if (code === "EXIT") {
+      result.textContent = "PARTIAL MATCH FOUND. EXIT TEAM FILE REMAINS LOCKED.";
+    } else {
+      result.textContent = "INVALID CODE. ATTEMPT RECORDED.";
+    }
+  });
+</script>
 </body>
 </html>
