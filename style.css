@@ -1915,6 +1915,24 @@ body {
     padding: 24px;
   }
 }
+/* ===== HOTLOG 002 EXTRA STYLING ===== */
+.adam-hotlog {
+  border-color: rgba(255,0,0,.75);
+  box-shadow: 0 0 45px rgba(255,0,0,.22), inset 0 0 35px rgba(255,0,0,.08);
+}
+.adam {
+  color: #ff4d4d;
+  text-shadow: 0 0 10px rgba(255,0,0,.55);
+}
+.adam-hotlog .transcript p {
+  border-left: 2px solid rgba(255,0,0,.12);
+  padding-left: 14px;
+}
+.adam-hotlog .host {
+  color: #ff0033;
+  text-shadow: 0 0 14px red;
+}
+
 
 
 
