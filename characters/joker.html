@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joker | ASU Archive</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="joker-page-body">
+
+  <!-- Fake archive access sequence, covers the page on load -->
+  <div class="joker-loader" id="jokerLoader">
+    <p id="loaderLine">Loading Archive...</p>
+  </div>
+
+  <main class="joker-file-page">
+
+    <a href="../contestants.html" class="back-home">← BACK TO ARCHIVE</a>
+
+    <!-- Joker's scripted name logo -->
+    <section class="joker-logo-root" id="jokerLogo">
+      <div class="joker-logo-wrap">
+
+        <svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" width="860" class="joker-logo-svg">
+          <defs>
+            <filter id="glowTeal" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feFlood flood-color="#4fd9c4" flood-opacity="0.7" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <linearGradient id="tealEdge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#08100e" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#4fd9c4" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#08100e" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <path d="M 30 20 L 30 44 M 30 20 L 58 20" class="corner-mark-j"/>
+          <path d="M 830 20 L 830 44 M 830 20 L 802 20" class="corner-mark-j"/>
+          <path d="M 30 240 L 30 216 M 30 240 L 58 240" class="corner-mark-j"/>
+          <path d="M 830 240 L 830 216 M 830 240 L 802 240" class="corner-mark-j"/>
+
+          <text x="430" y="130" class="title-joker outer-layer-j">JOKER</text>
+          <text x="430" y="130" class="title-joker glow-layer-j" id="jokerGlow">JOKER</text>
+
+          <line x1="90" y1="150" x2="770" y2="150" class="divider-line-j"/>
+
+          <text x="430" y="170" class="subtitle-text-j" id="jokerTicker">THE HOST IS WATCHING</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="joker-hero">
+      <img src="../characters/jokeri.png" class="joker-render" alt="Joker">
+
+      <div class="joker-info">
+        <p class="mystery-tag">◆ ARCHIVE — HIGH PRIORITY ◆</p>
+        <h2>JOKER</h2>
+
+        <div class="joker-stats">
+          <p><strong>Status:</strong> SAFE</p>
+          <p><strong>Archive Classification:</strong> HIGH PRIORITY</p>
+          <p><strong>Threat Level:</strong> UNKNOWN</p>
+        </div>
+
+        <p class="joker-warning">THIS CONTESTANT KNOWS TOO MUCH</p>
+      </div>
+    </section>
+
+    <section class="character-section-j quote-block-j">
+      <h2>Quote</h2>
+      <blockquote>"The truth always has a way of revealing itself."</blockquote>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Short Bio</h2>
+      <p>Joker is one of the smartest contestants in Anime Showdown Ultimax.</p>
+      <p>
+        Quiet and observant, he rarely speaks unless he has something important to say.
+        While many contestants focus on surviving challenges, Joker spends much of his
+        time watching the people around him and searching for answers.
+      </p>
+      <p>The Archive lists Joker as one of the most dangerous contestants on the island.</p>
+      <p>Not because of his strength...</p>
+      <p>Because of what he knows.</p>
+    </section>
+
+    <section class="character-section-j">
+      <h2>How They Arrived</h2>
+
+      <h3>Before ASU</h3>
+      <p>Joker was preparing for another Phantom Thieves mission.</p>
+      <p>Everything had been planned.</p>
+      <p>The route. The target. The escape.</p>
+      <p>Then, without warning, reality itself began to fall apart.</p>
+      <p>The city disappeared. His teammates vanished. Everything went silent.</p>
+
+      <h3>Arrival</h3>
+      <p>Joker awoke on the island alongside the other contestants.</p>
+      <p>Unlike everyone else... he immediately realized something was wrong.</p>
+      <p>The sky. The buildings. Even the air itself... none of it felt real.</p>
+      <p>While everyone else tried to understand the competition... Joker began
+      investigating the world itself.</p>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Personality</h2>
+      <p>Joker is calm, patient, and extremely intelligent.</p>
+      <p>He prefers watching people before deciding whether they can be trusted.</p>
+      <p>Although he rarely shows emotion, he genuinely cares about the people
+      fighting beside him.</p>
+      <p>His greatest weapon isn't his power.</p>
+      <p>It's his ability to stay one step ahead.</p>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Current Story</h2>
+      <p>Joker secretly leads the Exit Team.</p>
+      <p>Together with David, Law, Gyro, and Frieza, he searches for the truth
+      behind Anime Showdown Ultimax.</p>
+      <p>Every challenge. Every elimination. Every strange event...</p>
+      <p>Joker believes they're all connected.</p>
+      <p>He isn't trying to win the competition.</p>
+      <p>He's trying to end it.</p>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Relationships</h2>
+
+      <h3>Allies</h3>
+      <ul>
+        <li><strong>David Martinez</strong> — Joker's closest friend and the person he trusts most.</li>
+        <li><strong>Gyro Zeppeli</strong> — One of the first contestants to join the Exit Team.</li>
+        <li><strong>Law</strong> — Joker relies heavily on Law's intelligence when creating plans.</li>
+        <li><strong>Frieza</strong> — A useful ally. Not necessarily a trusted one.</li>
+      </ul>
+
+      <h3>Rivals</h3>
+      <ul>
+        <li><strong>Adam Smasher</strong> — Joker believes Adam is hiding something.</li>
+      </ul>
+
+      <h3>Enemies</h3>
+      <ul>
+        <li><strong>The Host</strong> — The one person Joker refuses to stop investigating.</li>
+      </ul>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Threat Assessment</h2>
+
+      <div class="scan-sequence" id="scanSequence">
+        <p class="scan-label" id="scanLabel">Scanning...</p>
+      </div>
+
+      <div class="stat-row" id="jokerStatRow1" style="display:none;">
+        <span class="stat-label">Combat Ability</span>
+        <div class="bar-track"><div class="bar-fill teal" style="width:70%"></div></div>
+        <span class="bar-value">7/10</span>
+      </div>
+      <div class="stat-row" id="jokerStatRow2" style="display:none;">
+        <span class="stat-label">Leadership</span>
+        <div class="bar-track"><div class="bar-fill teal" style="width:100%"></div></div>
+        <span class="bar-value">10/10</span>
+      </div>
+      <div class="stat-row" id="jokerStatRow3" style="display:none;">
+        <span class="stat-label">Intelligence</span>
+        <div class="bar-track"><div class="bar-fill teal" style="width:100%"></div></div>
+        <span class="bar-value">10/10</span>
+      </div>
+      <div class="stat-row" id="jokerStatRow4" style="display:none;">
+        <span class="stat-label">Trustworthiness</span>
+        <div class="bar-track"><div class="bar-fill teal" style="width:90%"></div></div>
+        <span class="bar-value">9/10</span>
+      </div>
+
+      <blockquote id="jokerClassification" style="display:none;">
+        Archive Classification:<br>
+        EXIT TEAM LEADER
+      </blockquote>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Lore</h2>
+      <p>Joker was the first contestant to realize Anime Showdown Ultimax wasn't
+      simply another world.</p>
+      <p>He discovered inconsistencies throughout the island long before anyone
+      else noticed them.</p>
+      <p>His investigation eventually led to the creation of the Exit Team.</p>
+      <p>Recovered Hotlogs suggest Joker has spoken directly to the Host multiple times.</p>
+      <p>No contestant knows what was said during those conversations.</p>
+      <p>The Archive contains dozens of corrupted files connected to Joker.</p>
+      <p>Many cannot be opened. Some disappear entirely.</p>
+      <p>One hidden Archive note simply reads:</p>
+      <blockquote>"If Joker learns the truth... the show ends."</blockquote>
+    </section>
+
+    <section class="character-section-j">
+      <h2>Additional Notes</h2>
+      <ul>
+        <li>Founder and leader of the Exit Team.</li>
+        <li>First contestant to question the Host.</li>
+        <li>Has attempted to access restricted Archive files.</li>
+        <li>Rarely trusts anyone immediately.</li>
+        <li>Believes there is a way to leave the island without winning.</li>
+        <li>The Host has personally monitored Joker since Episode 1.</li>
+      </ul>
+    </section>
+
+    <!-- Hidden message — invisible until highlighted with the mouse -->
+    <p style="margin-top:26px; font-size:13px; line-height:1.6;">
+      <span class="hidden-note-j">Keep searching.</span>
+    </p>
+
+  </main>
+
+  <!-- Secret message after 30 seconds on the page -->
+  <div class="hotlog-toast" id="hotlogToast">
+    <p>NEW HOTLOG UNLOCKED</p>
+    <p class="hotlog-toast-sub">...or did someone want you to think that?</p>
+  </div>
+
+  <script>
+    /* ---------- fake archive access sequence ---------- */
+    const loader = document.getElementById("jokerLoader");
+    const loaderLine = document.getElementById("loaderLine");
+    const loaderSteps = [
+      { text: "Loading Archive...", delay: 600 },
+      { text: "...", delay: 700 },
+      { text: "ACCESS DENIED", delay: 900 },
+      { text: "...", delay: 600 },
+      { text: "OVERRIDE ACCEPTED", delay: 900 },
+      { text: "Welcome back, Joker.", delay: 900 }
+    ];
+
+    let stepIndex = 0;
+    function runLoaderStep() {
+      if (stepIndex >= loaderSteps.length) {
+        loader.classList.add("hidden");
+        return;
+      }
+      const current = loaderSteps[stepIndex];
+      loaderLine.textContent = current.text;
+      setTimeout(() => {
+        stepIndex++;
+        runLoaderStep();
+      }, current.delay);
+    }
+    runLoaderStep();
+
+    /* ---------- random warning ticker in the logo ---------- */
+    const jokerTicker = document.getElementById("jokerTicker");
+    const tickerWarnings = [
+      "THE HOST IS WATCHING",
+      "FILE MODIFIED",
+      "SIGNAL FOUND",
+      "SOMEBODY IS LISTENING",
+      "EXIT TEAM ACTIVITY DETECTED"
+    ];
+    setInterval(() => {
+      jokerTicker.textContent =
+        tickerWarnings[Math.floor(Math.random() * tickerWarnings.length)];
+    }, 3800);
+
+    /* ---------- unresolved threat scan sequence ---------- */
+    const scanLabel = document.getElementById("scanLabel");
+    const scanSteps = [
+      { text: "Scanning...", delay: 1200 },
+      { text: "...", delay: 800 },
+      { text: "ERROR", delay: 1000 },
+      { text: "Threat Level:", delay: 900 },
+      { text: "Threat Level: UNKNOWN", delay: 0 }
+    ];
+    let scanIndex = 0;
+    function runScanStep() {
+      if (scanIndex >= scanSteps.length) {
+        // reveal the stat bars once the "scan" gives up
+        ["jokerStatRow1", "jokerStatRow2", "jokerStatRow3", "jokerStatRow4", "jokerClassification"]
+          .forEach(id => document.getElementById(id).style.display = "");
+        return;
+      }
+      const current = scanSteps[scanIndex];
+      scanLabel.textContent = current.text;
+      setTimeout(() => {
+        scanIndex++;
+        runScanStep();
+      }, current.delay);
+    }
+    runScanStep();
+
+    /* ---------- secret hotlog toast after 30s ---------- */
+    const hotlogToast = document.getElementById("hotlogToast");
+    setTimeout(() => {
+      hotlogToast.classList.add("visible");
+      setTimeout(() => hotlogToast.classList.remove("visible"), 6000);
+    }, 30000);
+  </script>
+
+</body>
+</html>
