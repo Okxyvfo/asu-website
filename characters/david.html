@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>David Martinez | ASU Archive</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       DAVID MARTINEZ — page-specific styles.
+       Namespaced under .david-* so this can be dropped straight
+       into the site, or merged into the shared style.css later.
+       Palette: cold Night City cyan against a warm signal-gold —
+       the "heart of the team" holding steady against the dark,
+       instead of Adam's red corruption glow.
+    ========================================================= */
+
+    .david-page-body {
+      background: radial-gradient(ellipse at 50% 0%, #0c1926 0%, #060d16 55%, #04080f 100%);
+      color: #dff2ff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    .david-file-page { max-width: 960px; margin: 0 auto; padding: 40px 20px 100px; }
+
+    .back-home {
+      display: inline-block;
+      color: #6fd8ff;
+      text-decoration: none;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+      margin-bottom: 20px;
+      transition: opacity 0.2s ease;
+    }
+    .back-home:hover { opacity: 1; }
+
+    /* ---------- Logo ---------- */
+    .david-logo-root { position: relative; }
+    .david-logo-wrap { position: relative; transition: transform 0.08s ease; }
+    .david-logo-svg { display: block; width: 100%; height: auto; }
+
+    .corner-mark-d { stroke: #3fa9d6; stroke-width: 1.5; opacity: 0.55; fill: none; }
+    .tick-marks-d line { stroke: #2c6f92; stroke-width: 1; opacity: 0.6; }
+    .divider-line-d { stroke: url(#goldEdge); stroke-width: 1.5; }
+
+    .title-david, .title-martinez {
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      text-anchor: middle;
+      letter-spacing: 4px;
+    }
+    .title-david { font-size: 84px; }
+    .title-martinez { font-size: 54px; letter-spacing: 8px; }
+
+    .outer-layer-d { fill: none; stroke: #0a3a52; stroke-width: 2; }
+    .glow-layer-d { fill: #bdf0ff; filter: url(#glowCyan); }
+    .flicker-layer-d { fill: #ffffff; opacity: 0.85; }
+    .ghost-layer-d { fill: #ffcf7a; opacity: 0; }
+    .ghost-layer-d.active { opacity: 0.35; }
+
+    .subtitle-text-d {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-anchor: middle;
+      fill: #7fd9ff;
+      opacity: 0.8;
+    }
+
+    .pulse-line { stroke: #ffb347; stroke-width: 2; fill: none; opacity: 0.9; }
+    .pulse-dot { fill: #ffb347; filter: url(#glowGold); }
+
+    /* ---------- Hero ---------- */
+    .david-hero {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-top: 20px;
+      padding: 24px;
+      border: 1px solid rgba(111, 216, 255, 0.18);
+      border-radius: 4px;
+      background: linear-gradient(180deg, rgba(20, 40, 58, 0.35), rgba(6, 13, 22, 0.35));
+    }
+    .david-render {
+      width: 220px;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 179, 71, 0.35);
+      box-shadow: 0 0 24px rgba(63, 169, 214, 0.25);
+    }
+    .david-info { flex: 1; }
+
+    .verified-tag {
+      font-family: 'Chakra Petch', sans-serif;
+      color: #ffb347;
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin: 0 0 6px;
+    }
+    .david-info h2 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      margin: 0 0 14px;
+      color: #eaf8ff;
+    }
+    .david-stats p { margin: 4px 0; font-size: 14px; color: #b9dcef; }
+    .david-stats strong { color: #6fd8ff; }
+
+    .david-motto {
+      margin-top: 14px;
+      font-family: 'Chakra Petch', sans-serif;
+      letter-spacing: 2px;
+      color: #ffb347;
+      font-size: 14px;
+      transition: opacity 0.4s ease;
+    }
+
+    /* ---------- Sections ---------- */
+    .character-section-d {
+      margin-top: 34px;
+      padding: 22px 26px;
+      border-left: 2px solid rgba(111, 216, 255, 0.35);
+      background: rgba(15, 28, 40, 0.35);
+      border-radius: 0 4px 4px 0;
+    }
+    .character-section-d h2 {
+      font-family: 'Chakra Petch', sans-serif;
+      color: #6fd8ff;
+      letter-spacing: 2px;
+      font-size: 19px;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+    .character-section-d h3 {
+      font-family: 'Chakra Petch', sans-serif;
+      color: #ffb347;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      margin: 16px 0 6px;
+    }
+    .character-section-d p { line-height: 1.65; color: #cfe8f5; margin: 8px 0; }
+    .character-section-d ul { margin: 8px 0; padding-left: 20px; color: #cfe8f5; }
+    .character-section-d li { margin: 6px 0; line-height: 1.55; }
+    .character-section-d blockquote {
+      border-left: 3px solid #ffb347;
+      margin: 14px 0;
+      padding: 6px 0 6px 16px;
+      color: #ffe3b0;
+      font-style: italic;
+    }
+    .quote-block-d blockquote {
+      font-size: 20px;
+      color: #eaf8ff;
+      border: none;
+      padding: 0;
+    }
+
+    .archive-caption {
+      color: #6fa3b8;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 10px !important;
+    }
+
+    /* ---------- Threat / status bars ---------- */
+    .stat-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+    .stat-label { width: 190px; font-size: 13px; color: #9fd3e8; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #3fa9d6, #6fd8ff); }
+    .bar-fill.gold { background: linear-gradient(90deg, #b97a1f, #ffb347); }
+    .bar-value { width: 46px; text-align: right; font-size: 12px; color: #8fb8cc; }
+
+    /* ---------- Archive status footer ---------- */
+    .archive-status-d {
+      margin-top: 34px;
+      padding: 18px 26px;
+      border: 1px dashed rgba(111, 216, 255, 0.3);
+      border-radius: 4px;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 13px;
+      color: #8fd3ec;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .archive-status-d .hl { color: #ffb347; }
+
+    /* ---------- Hidden message, mouse-highlight only ---------- */
+    .hidden-note {
+      color: transparent;
+      text-shadow: none;
+      cursor: default;
+      user-select: text;
+    }
+    .hidden-note::selection {
+      color: #ffe3b0;
+      background: rgba(63, 169, 214, 0.35);
+    }
+
+    @media (max-width: 640px) {
+      .david-hero { flex-direction: column; }
+      .david-render { width: 160px; }
+      .title-david { font-size: 54px; }
+      .title-martinez { font-size: 34px; }
+    }
+  </style>
+</head>
+
+<body class="david-page-body">
+
+  <main class="david-file-page">
+
+    <a href="../contestants.html" class="back-home">← BACK TO ARCHIVE</a>
+
+    <!-- David's scripted heartbeat-pulse name logo -->
+    <section class="david-logo-root" id="davidLogo">
+      <div class="david-logo-wrap" id="davidLogoWrap">
+
+        <svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" width="860" class="david-logo-svg">
+          <defs>
+            <filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="7" result="blur"/>
+              <feFlood flood-color="#3fc4ff" flood-opacity="0.75" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glowGold" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feFlood flood-color="#ffb347" flood-opacity="0.9" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0c1926" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#ffb347" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#0c1926" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <path d="M 30 20 L 30 50 M 30 20 L 68 20" class="corner-mark-d"/>
+          <path d="M 830 20 L 830 50 M 830 20 L 792 20" class="corner-mark-d"/>
+          <path d="M 30 320 L 30 290 M 30 320 L 68 320" class="corner-mark-d"/>
+          <path d="M 830 320 L 830 290 M 830 320 L 792 320" class="corner-mark-d"/>
+
+          <g class="tick-marks-d">
+            <line x1="14" y1="60" x2="26" y2="60"/><line x1="14" y1="100" x2="26" y2="100"/>
+            <line x1="14" y1="140" x2="26" y2="140"/><line x1="14" y1="180" x2="26" y2="180"/>
+            <line x1="14" y1="220" x2="26" y2="220"/><line x1="14" y1="260" x2="26" y2="260"/>
+            <line x1="14" y1="300" x2="26" y2="300"/>
+            <line x1="834" y1="60" x2="846" y2="60"/><line x1="834" y1="100" x2="846" y2="100"/>
+            <line x1="834" y1="140" x2="846" y2="140"/><line x1="834" y1="180" x2="846" y2="180"/>
+            <line x1="834" y1="220" x2="846" y2="220"/><line x1="834" y1="260" x2="846" y2="260"/>
+            <line x1="834" y1="300" x2="846" y2="300"/>
+          </g>
+
+          <text x="430" y="160" class="title-david outer-layer-d">DAVID</text>
+          <text x="432" y="161" class="title-david ghost-layer-d" id="davidGhost">DAVID</text>
+          <text x="430" y="160" class="title-david glow-layer-d" id="davidMain">DAVID</text>
+          <text x="430" y="160" class="title-david flicker-layer-d" id="davidFlicker">DAVID</text>
+
+          <line x1="60" y1="185" x2="800" y2="185" class="divider-line-d"/>
+
+          <text x="430" y="205" class="subtitle-text-d" id="davidCode">VITALS STABLE — HEART RATE 118 BPM — EXIT TEAM LINK</text>
+
+          <!-- heartbeat pulse strip -->
+          <polyline id="pulseLine" class="pulse-line" points="80,225 200,225 215,225 225,205 235,245 245,215 255,225 780,225"/>
+          <circle id="pulseDot" class="pulse-dot" cx="80" cy="225" r="3"/>
+
+          <text x="430" y="300" class="title-martinez outer-layer-d">MARTINEZ</text>
+          <text x="428" y="299" class="title-martinez ghost-layer-d" id="martinezGhost">MARTINEZ</text>
+          <text x="430" y="300" class="title-martinez glow-layer-d" id="martinezMain">MARTINEZ</text>
+          <text x="430" y="300" class="title-martinez flicker-layer-d" id="martinezFlicker">MARTINEZ</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="david-hero">
+      <img src="../characters/davidm.png" class="david-render" alt="David Martinez">
+
+      <div class="david-info">
+        <p class="verified-tag">◆ EXIT TEAM FILE — VERIFIED ◆</p>
+        <h2>DAVID MARTINEZ</h2>
+
+        <div class="david-stats">
+          <p><strong>Actor:</strong> —</p>
+          <p><strong>Team:</strong> TEAM 1</p>
+          <p><strong>Status:</strong> SAFE</p>
+          <p><strong>Archive Classification:</strong> EXIT TEAM MEMBER</p>
+          <p><strong>Threat Level:</strong> MODERATE</p>
+        </div>
+
+        <p class="david-motto" id="davidMotto">HE WON'T BREAK</p>
+      </div>
+    </section>
+
+    <section class="character-section-d quote-block-d">
+      <h2>Quote</h2>
+      <blockquote>"You don't get to decide when I quit."</blockquote>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Short Bio</h2>
+      <p>
+        David Martinez is one of the youngest contestants in Anime Showdown Ultimax,
+        but his determination has earned him the respect of nearly everyone on the island.
+      </p>
+      <p>
+        Unlike many contestants, David believes protecting others is always worth the risk.
+        Whether facing impossible odds or overwhelming opponents, he refuses to abandon
+        the people who rely on him.
+      </p>
+      <p>Many contestants describe David as the emotional heart of Team 1.</p>
+      <p>The Archive describes him differently.</p>
+      <blockquote>"The easiest heart to break."</blockquote>
+    </section>
+
+    <section class="character-section-d">
+      <h2>How He Arrived</h2>
+
+      <h3>Before ASU</h3>
+      <p>For the first time in a long while, David wasn't fighting.</p>
+      <p>Night City was quiet. The chaos had settled.</p>
+      <p>He had finally begun believing life could move forward.</p>
+      <p>Then... everything disappeared. The lights. The streets. The skyline.
+      Even gravity itself seemed to stop.</p>
+
+      <h3>Arrival</h3>
+      <p>
+        David awoke on an unfamiliar island surrounded by people he had never seen before.
+        Instead of panicking, his first instinct was to check if everyone else was okay.
+      </p>
+      <p>That decision would eventually lead him to Joker... and the Exit Team.</p>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Personality</h2>
+      <p>David is courageous, loyal, and incredibly selfless.</p>
+      <p>
+        He often places other people's safety above his own, sometimes without realizing
+        the danger he's putting himself in.
+      </p>
+      <p>Despite everything he's endured, David still believes people deserve second chances.</p>
+      <p>That optimism has made him one of the most trusted contestants on the island...
+      and one of the Host's favorite targets.</p>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Current Story</h2>
+      <p>David has become one of Team 1's emotional pillars.</p>
+      <p>
+        Although Joker leads the Exit Team, David is often the one keeping everyone
+        together whenever morale begins to fall.
+      </p>
+      <p>While Joker creates the plans... Law perfects them... and Gyro inspires everyone...</p>
+      <p>David is the one willing to risk everything to make those plans succeed.</p>
+      <p>He has unknowingly become one of the greatest obstacles standing between the
+      Host and complete control over the contestants.</p>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Relationships</h2>
+
+      <h3>Allies</h3>
+      <ul>
+        <li><strong>Joker</strong> — Founder of the Exit Team and David's closest friend on the island.</li>
+        <li><strong>Gyro Zeppeli</strong> — Frequently reminds David that giving up is never an option.</li>
+        <li><strong>Trafalgar D. Water Law</strong> — David trusts Law's judgment, even when he doesn't fully understand the plan.</li>
+        <li><strong>Frieza</strong> — A temporary alliance built entirely on necessity. Neither fully trusts the other.</li>
+      </ul>
+
+      <h3>Rivals</h3>
+      <ul>
+        <li><strong>Adam Smasher</strong> — David despises Adam's willingness to work alongside the Host.</li>
+      </ul>
+
+      <h3>Enemies</h3>
+      <ul>
+        <li><strong>The Host</strong> — David refuses to believe anyone deserves absolute control over another person's life.</li>
+      </ul>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Threat Assessment</h2>
+      <div class="stat-row"><span class="stat-label">Combat Ability</span><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="bar-value">7/10</span></div>
+      <div class="stat-row"><span class="stat-label">Leadership</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><span class="bar-value">8/10</span></div>
+      <div class="stat-row"><span class="stat-label">Trustworthiness</span><div class="bar-track"><div class="bar-fill gold" style="width:100%"></div></div><span class="bar-value">10/10</span></div>
+      <div class="stat-row"><span class="stat-label">Psychological Stability</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bar-value">6/10</span></div>
+      <blockquote style="margin-top:18px;">ARCHIVE CLASSIFICATION:<br>EXIT TEAM MEMBER</blockquote>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Lore</h2>
+      <p>
+        Unlike most contestants, David has become deeply involved in uncovering the
+        truth behind Anime Showdown Ultimax.
+      </p>
+      <p>Recovered Hotlogs place David at nearly every major Exit Team meeting.</p>
+      <p>
+        Although he rarely creates the plans himself, he is almost always the first
+        person willing to put himself in danger so someone else doesn't have to.
+      </p>
+      <p>
+        Internal Archive files suggest the Host has taken a particular interest in
+        David's unwavering loyalty. One classified note simply reads:
+      </p>
+      <blockquote>"Break the heart... and the rest will follow."</blockquote>
+      <p>The meaning of this message remains unknown.</p>
+    </section>
+
+    <section class="character-section-d">
+      <h2>Additional Notes</h2>
+      <ul>
+        <li>Confirmed member of the Exit Team.</li>
+        <li>Frequently volunteers for the most dangerous tasks.</li>
+        <li>The Host has repeatedly attempted to isolate David from the rest of the Exit Team.</li>
+        <li>Has never willingly abandoned another contestant.</li>
+        <li>Considered one of the greatest obstacles to the Host's psychological manipulation.</li>
+        <li>Security footage shows David helping eliminated contestants despite receiving nothing in return.</li>
+        <li>Joker once described David as "the reason we're still fighting."</li>
+      </ul>
+    </section>
+
+    <section class="archive-status-d">
+      <span>Archive Integrity: <span class="hl">96%</span></span>
+      <span>Known Hotlog Mentions: <span class="hl">✓ Hotlog 002 · ✓ Hotlog 003</span></span>
+      <span>Host Observation Level: <span class="hl">HIGH</span></span>
+    </section>
+
+    <!-- Hidden message — invisible until highlighted with the mouse -->
+    <p style="margin-top:26px; font-size:13px; line-height:1.6;">
+      <span class="hidden-note">David... if you're reading this, don't trust the cameras. —J</span>
+    </p>
+
+  </main>
+
+  <script>
+    const davidTextNodes = [
+      document.getElementById("davidGhost"),
+      document.getElementById("davidMain"),
+      document.getElementById("davidFlicker")
+    ];
+    const martinezTextNodes = [
+      document.getElementById("martinezGhost"),
+      document.getElementById("martinezMain"),
+      document.getElementById("martinezFlicker")
+    ];
+
+    const logoWrap = document.getElementById("davidLogoWrap");
+    const davidCode = document.getElementById("davidCode");
+    const pulseLine = document.getElementById("pulseLine");
+    const pulseDot = document.getElementById("pulseDot");
+    const mottoEl = document.getElementById("davidMotto");
+
+    const STEADY_CODE = "VITALS STABLE — HEART RATE 118 BPM — EXIT TEAM LINK";
+    const STRAIN_CODE = "SIGNAL STRAIN DETECTED — HOST INTERFERENCE";
+
+    const mottoLines = [
+      "HE WON'T BREAK",
+      "STILL STANDING",
+      "TRUST THE TEAM",
+      "DON'T LOOK AWAY",
+      "THE HEART HOLDS"
+    ];
+
+    // Ambient heartbeat: the pulse dot travels the line every beat.
+    function runPulse() {
+      const totalLen = pulseLine.getTotalLength();
+      const dur = 1400;
+      const start = performance.now();
+
+      function step(now) {
+        const t = Math.min((now - start) / dur, 1);
+        const point = pulseLine.getPointAtLength(t * totalLen);
+        pulseDot.setAttribute("cx", point.x);
+        pulseDot.setAttribute("cy", point.y);
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    setInterval(runPulse, 1500);
+    runPulse();
+
+    // Rare, brief "strain" moment — the Host pushes, David holds. Unlike Adam,
+    // the signal always recovers instead of surrendering to the corruption.
+    function strainBurst() {
+      const shift = Math.random() > 0.5 ? 1 : -1;
+      logoWrap.style.transform = `translateX(${shift * 2}px)`;
+      davidTextNodes.forEach(n => n.classList.add("active"));
+      martinezTextNodes.forEach(n => n.classList.add("active"));
+      davidCode.textContent = STRAIN_CODE;
+
+      setTimeout(() => {
+        logoWrap.style.transform = "none";
+        davidTextNodes.forEach(n => n.classList.remove("active"));
+        martinezTextNodes.forEach(n => n.classList.remove("active"));
+        davidCode.textContent = STEADY_CODE;
+        scheduleStrain();
+      }, 260);
+    }
+
+    function scheduleStrain() {
+      setTimeout(strainBurst, 6000 + Math.random() * 6000);
+    }
+    scheduleStrain();
+
+    setInterval(() => {
+      mottoEl.style.opacity = 0;
+      setTimeout(() => {
+        mottoEl.textContent = mottoLines[Math.floor(Math.random() * mottoLines.length)];
+        mottoEl.style.opacity = 1;
+      }, 350);
+    }, 4200);
+  </script>
+
+</body>
+</html>
