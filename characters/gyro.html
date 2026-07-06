@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gyro Zeppeli | ASU Archive</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="gyro-page-body">
+
+  <!-- Warm archive access sequence, covers the page on load -->
+  <div class="gyro-loader" id="gyroLoader">
+    <p id="gyroLoaderLine">Loading Archive...</p>
+  </div>
+
+  <main class="gyro-file-page">
+
+    <a href="../contestants.html" class="back-home">← BACK TO ARCHIVE</a>
+
+    <!-- Gyro's scripted name logo -->
+    <section class="gyro-logo-root" id="gyroLogo">
+      <div class="gyro-logo-wrap">
+
+        <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" width="860" class="gyro-logo-svg">
+          <defs>
+            <filter id="glowAmber" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="7" result="blur"/>
+              <feFlood flood-color="#ffb347" flood-opacity="0.8" result="color"/>
+              <feComposite in="color" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="sunriseGlow" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="#ffcf7a" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#ffcf7a" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="amberEdge" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1a1208" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#ffb347" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#1a1208" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <circle cx="430" cy="140" r="150" fill="url(#sunriseGlow)"/>
+
+          <path d="M 30 20 L 30 46 M 30 20 L 60 20" class="corner-mark-g"/>
+          <path d="M 830 20 L 830 46 M 830 20 L 800 20" class="corner-mark-g"/>
+          <path d="M 30 260 L 30 234 M 30 260 L 60 260" class="corner-mark-g"/>
+          <path d="M 830 260 L 830 234 M 830 260 L 800 260" class="corner-mark-g"/>
+
+          <!-- small orbiting "Spin" ball -->
+          <g id="spinOrbit" style="transform-origin: 430px 140px;">
+            <circle cx="595" cy="140" r="5" fill="#ffb347" filter="url(#glowAmber)"/>
+          </g>
+
+          <text x="430" y="150" class="title-gyro outer-layer-g">GYRO</text>
+          <text x="430" y="150" class="title-gyro glow-layer-g">GYRO</text>
+
+          <line x1="90" y1="172" x2="770" y2="172" class="divider-line-g"/>
+
+          <text x="430" y="192" class="subtitle-text-g" id="gyroTicker">KEEP MOVING.</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="gyro-hero">
+      <div class="gyro-render-wrap" id="gyroRenderWrap">
+        <img src="../characters/gyroi.png" class="gyro-render" alt="Gyro Zeppeli">
+        <p class="click-secret" id="clickSecret">Lesson 5.</p>
+      </div>
+
+      <div class="gyro-info">
+        <p class="hope-tag">◆ ARCHIVE — MONITORED ◆</p>
+        <h2>GYRO ZEPPELI</h2>
+
+        <div class="gyro-stats">
+          <p><strong>Status:</strong> SAFE</p>
+          <p><strong>Archive Classification:</strong> MONITORED</p>
+          <p><strong>Threat Level:</strong> MODERATE</p>
+        </div>
+
+        <p class="gyro-warning" id="gyroWarning">MORALE LEVELS INCREASE WHEN PRESENT</p>
+      </div>
+    </section>
+
+    <section class="character-section-g quote-block-g">
+      <h2>Quote</h2>
+      <blockquote>"The shortest path isn't always a straight line."</blockquote>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Short Bio</h2>
+      <p>Gyro Zeppeli is one of the most charismatic contestants in Anime Showdown Ultimax.</p>
+      <p>
+        While many contestants struggle to stay positive, Gyro somehow finds a reason
+        to smile even during the island's darkest moments.
+      </p>
+      <p>
+        Whether he's making terrible jokes, teaching someone something new, or reminding
+        everyone to keep moving forward, Gyro has become one of Team 1's emotional pillars.
+      </p>
+      <p>The Archive describes him as dangerous...</p>
+      <p>Not because of his strength.</p>
+      <p>Because people believe in him.</p>
+    </section>
+
+    <section class="character-section-g">
+      <h2>How They Arrived</h2>
+
+      <h3>Before ASU</h3>
+      <p>Gyro had been traveling alongside Johnny Joestar during the Steel Ball Run.</p>
+      <p>After another exhausting day, he stepped away from camp to practice the Spin
+      beneath the night sky.</p>
+      <p>As one of his Steel Balls returned to his hand...</p>
+      <p>Reality cracked. The stars disappeared. The world twisted around him.</p>
+
+      <h3>Arrival</h3>
+      <p>Gyro landed on the island laughing.</p>
+      <p>Not because he understood what had happened.</p>
+      <p>Because strange situations had always followed him.</p>
+      <p>Rather than panic, he immediately introduced himself to the strangers around him.</p>
+      <p>Some thought he was crazy. Others couldn't help but smile.</p>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Personality</h2>
+      <p>Gyro is energetic, confident, and incredibly compassionate.</p>
+      <p>He enjoys making jokes even when nobody laughs.</p>
+      <p>Beneath that humor lies someone who genuinely wants to see everyone around
+      him become stronger.</p>
+      <p>Whether someone is scared, angry, or ready to give up...</p>
+      <p>Gyro always finds something encouraging to say.</p>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Current Story</h2>
+      <p>Gyro is one of the founding members of the Exit Team.</p>
+      <p>Although Joker leads the group, Gyro often keeps everyone focused whenever
+      tensions begin to rise.</p>
+      <p>He believes there is always another path forward.</p>
+      <p>Even when escape seems impossible.</p>
+      <p>Many contestants don't realize it...</p>
+      <p>But without Gyro... the Exit Team might have fallen apart long ago.</p>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Relationships</h2>
+
+      <h3>Allies</h3>
+      <ul>
+        <li><strong>Joker</strong> — One of Gyro's closest friends and the person he trusts most.</li>
+        <li><strong>David Martinez</strong> — Gyro constantly encourages David to believe in himself.</li>
+        <li><strong>Law</strong> — Although Law finds Gyro annoying, the two secretly work together
+        extremely well.</li>
+        <li><strong>Gohan</strong> — Gyro sees Gohan as someone carrying too much responsibility and
+        often reminds him to relax.</li>
+      </ul>
+
+      <h3>Rivals</h3>
+      <ul>
+        <li><strong>Musashi Miyamoto</strong> — Both warriors deeply respect each other's fighting styles.</li>
+      </ul>
+
+      <h3>Enemies</h3>
+      <ul>
+        <li><strong>The Host</strong> — Gyro refuses to let the Host take away everyone's hope.</li>
+      </ul>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Threat Assessment</h2>
+
+      <div class="stat-row">
+        <span class="stat-label">Combat Ability</span>
+        <div class="bar-track"><div class="bar-fill gold" style="width:80%"></div></div>
+        <span class="bar-value">8/10</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Leadership</span>
+        <div class="bar-track"><div class="bar-fill gold" style="width:90%"></div></div>
+        <span class="bar-value">9/10</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Morale</span>
+        <div class="bar-track"><div class="bar-fill gold" style="width:100%"></div></div>
+        <span class="bar-value">10/10</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Trustworthiness</span>
+        <div class="bar-track"><div class="bar-fill gold" style="width:100%"></div></div>
+        <span class="bar-value">10/10</span>
+      </div>
+
+      <blockquote>
+        Archive Classification:<br>
+        EXIT TEAM MEMBER
+      </blockquote>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Lore</h2>
+      <p>Gyro became one of the first contestants Joker trusted.</p>
+      <p>Recovered Archive files show Gyro participating in nearly every major Exit
+      Team discussion.</p>
+      <p>Unlike Joker, who focuses on solving mysteries...</p>
+      <p>Gyro focuses on protecting the people trying to solve them.</p>
+      <p>One deleted Archive note states:</p>
+      <blockquote>"Hope spreads faster than fear."</blockquote>
+      <p>The line appears to have been written by the Host himself.</p>
+    </section>
+
+    <section class="character-section-g">
+      <h2>Additional Notes</h2>
+      <ul>
+        <li>Founding member of the Exit Team.</li>
+        <li>Frequently teaches contestants the basics of the Spin.</li>
+        <li>Has attempted to improve team morale after nearly every elimination.</li>
+        <li>Known for making terrible jokes at the worst possible moments.</li>
+        <li>One of the few contestants capable of calming arguments before they become fights.</li>
+        <li>Archive staff have described Gyro as "dangerously inspiring."</li>
+      </ul>
+    </section>
+
+    <!-- Hidden message — invisible until highlighted with the mouse -->
+    <p style="margin-top:26px; font-size:13px; line-height:1.6;">
+      <span class="hidden-note-g">If you're reading this... don't lose hope.</span>
+    </p>
+
+    <p class="corner-note-g">"Everyone needs someone like Gyro." — Joker</p>
+
+  </main>
+
+  <script>
+    /* ---------- warm archive access sequence ---------- */
+    const gyroLoader = document.getElementById("gyroLoader");
+    const gyroLoaderLine = document.getElementById("gyroLoaderLine");
+    const gyroLoaderSteps = [
+      { text: "Loading Archive...", delay: 600 },
+      { text: "Loading...", delay: 600 },
+      { text: "Loading...", delay: 600 },
+      { text: "Welcome back.", delay: 800 },
+      { text: "Today's a good day.", delay: 900 }
+    ];
+    let gyroStepIndex = 0;
+    function runGyroLoaderStep() {
+      if (gyroStepIndex >= gyroLoaderSteps.length) {
+        gyroLoader.classList.add("hidden");
+        return;
+      }
+      const current = gyroLoaderSteps[gyroStepIndex];
+      gyroLoaderLine.textContent = current.text;
+      setTimeout(() => {
+        gyroStepIndex++;
+        runGyroLoaderStep();
+      }, current.delay);
+    }
+    runGyroLoaderStep();
+
+    /* ---------- slow orbiting Spin ball ---------- */
+    const spinOrbit = document.getElementById("spinOrbit");
+    let spinAngle = 0;
+    function spin() {
+      spinAngle = (spinAngle + 0.9) % 360;
+      spinOrbit.setAttribute("transform", `rotate(${spinAngle} 430 140)`);
+      requestAnimationFrame(spin);
+    }
+    spin();
+
+    /* ---------- rotating encouragement ticker ---------- */
+    const gyroTicker = document.getElementById("gyroTicker");
+    const gyroWarning = document.getElementById("gyroWarning");
+    const encouragements = [
+      "KEEP MOVING.",
+      "NEVER GIVE UP.",
+      "THE SHORTEST PATH IS A DETOUR.",
+      "STAND BACK UP.",
+      "KEEP SMILING."
+    ];
+    setInterval(() => {
+      gyroTicker.textContent =
+        encouragements[Math.floor(Math.random() * encouragements.length)];
+    }, 3800);
+
+    /* ---------- 7-click easter egg on the render ---------- */
+    const gyroRenderWrap = document.getElementById("gyroRenderWrap");
+    const clickSecret = document.getElementById("clickSecret");
+    let clickCount = 0;
+    let clickResetTimer = null;
+
+    gyroRenderWrap.addEventListener("click", () => {
+      clickCount++;
+      clearTimeout(clickResetTimer);
+      clickResetTimer = setTimeout(() => { clickCount = 0; }, 4000);
+
+      if (clickCount === 7) {
+        clickSecret.classList.add("visible");
+        clickCount = 0;
+        setTimeout(() => clickSecret.classList.remove("visible"), 3000);
+      }
+    });
+  </script>
+
+</body>
+</html>
