@@ -1954,6 +1954,378 @@ body {
 .discovery-hotlog .frieza { color: #ff75e6; }
 .discovery-hotlog .david { color: #ffb36c; }
 
+/* =========================================================
+   ASU ARCHIVE — SHARED STYLESHEET
+   Sections:
+   1. Base / reset
+   2. Shared layout (back-home, character-section base)
+   3. ADAM SMASHER — restricted-file theme (red/black corruption)
+   4. DAVID MARTINEZ — verified-file theme (cyan/gold heartbeat)
+   ========================================================= */
+
+/* ---------- 1. Base / reset ---------- */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #060606;
+  color: #ddd;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- 2. Shared layout ---------- */
+.back-home {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  margin-bottom: 20px;
+  transition: opacity 0.2s ease;
+}
+.back-home:hover { opacity: 1; }
+
+.character-section, .character-section-d {
+  margin-top: 34px;
+  padding: 22px 26px;
+  border-radius: 0 4px 4px 0;
+}
+.character-section h2, .character-section-d h2 {
+  letter-spacing: 2px;
+  font-size: 19px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+.character-section h3, .character-section-d h3 {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  margin: 16px 0 6px;
+}
+.character-section p, .character-section-d p {
+  line-height: 1.65;
+  margin: 8px 0;
+}
+.character-section ul, .character-section-d ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+.character-section li, .character-section-d li {
+  margin: 6px 0;
+  line-height: 1.55;
+}
+.character-section blockquote, .character-section-d blockquote {
+  margin: 14px 0;
+  padding: 6px 0 6px 16px;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   3. ADAM SMASHER — restricted-file theme
+   Cold black/red, corruption-glitch signature.
+========================================================= */
+
+.adam-page-body {
+  background: radial-gradient(ellipse at 50% 0%, #1a0a0a 0%, #0c0505 55%, #050202 100%);
+  color: #e8d5d5;
+  min-height: 100vh;
+}
+
+.adam-file-page { max-width: 960px; margin: 0 auto; padding: 40px 20px 100px; }
+
+.adam-page-body .back-home { color: #ff5c5c; }
+
+/* ---- logo scaffolding ---- */
+.adam-smasher-root { position: relative; }
+.logo-svg-wrap { position: relative; transition: transform 0.08s ease; overflow: hidden; }
+.adam-logo-svg { display: block; width: 100%; height: auto; }
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0.03) 0px,
+    rgba(255, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 2;
+}
+
+.glitch-slice {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(255, 0, 0, 0.08);
+  mix-blend-mode: screen;
+  z-index: 3;
+}
+.glitch-slice.active { opacity: 1; }
+
+.corner-mark { stroke: #660000; stroke-width: 1.5; opacity: 0.6; fill: none; }
+.tick-marks line { stroke: #440000; stroke-width: 1; opacity: 0.6; }
+.divider-line { stroke: url(#dividerGrad); stroke-width: 1.5; }
+
+.title-adam, .title-smasher {
+  font-weight: 700;
+  text-anchor: middle;
+  letter-spacing: 4px;
+}
+.title-adam { font-size: 84px; }
+.title-smasher { font-size: 54px; letter-spacing: 8px; }
+
+.outer-adam, .outer-smasher { fill: none; stroke: url(#darkChrome); stroke-width: 2; }
+.glow-layer { fill: #ff4444; filter: url(#glowRed); }
+.flicker-layer { fill: #ffffff; opacity: 0.7; }
+.glitch-ghost { fill: #ff2020; opacity: 0; }
+.glitch-ghost.active { opacity: 0.4; }
+
+.subtitle-text {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-anchor: middle;
+  fill: #cc4444;
+  opacity: 0.85;
+}
+
+.spark {
+  animation: spark-fly var(--dur, 0.4s) ease-out var(--del, 0s) forwards;
+}
+@keyframes spark-fly {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+}
+
+/* ---- hero ---- */
+.adam-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid rgba(204, 0, 0, 0.18);
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(40, 10, 10, 0.35), rgba(10, 5, 5, 0.35));
+}
+.adam-render {
+  width: 220px;
+  border-radius: 3px;
+  border: 1px solid rgba(204, 0, 0, 0.35);
+  box-shadow: 0 0 24px rgba(204, 0, 0, 0.25);
+}
+.adam-info { flex: 1; }
+
+.restricted-tag {
+  color: #ff4444;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin: 0 0 6px;
+}
+.adam-info h2 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0 0 14px;
+  color: #f5e5e5;
+}
+.adam-stats p { margin: 4px 0; font-size: 14px; color: #d8b9b9; }
+.adam-stats strong { color: #ff5c5c; }
+
+.adam-warning {
+  margin-top: 14px;
+  letter-spacing: 2px;
+  color: #ff4444;
+  font-size: 14px;
+}
+
+/* ---- sections ---- */
+.restricted-section {
+  border-left: 2px solid rgba(204, 0, 0, 0.4);
+  background: rgba(30, 10, 10, 0.35);
+}
+.restricted-section h2 { color: #ff4444; }
+.restricted-section h3 { color: #ff8888; }
+.restricted-section p, .restricted-section li { color: #e0c8c8; }
+.restricted-section blockquote { border-left: 3px solid #ff4444; color: #ffcccc; }
+
+@media (max-width: 640px) {
+  .adam-hero { flex-direction: column; }
+  .adam-render { width: 160px; }
+  .title-adam { font-size: 54px; }
+  .title-smasher { font-size: 34px; }
+}
+
+
+/* =========================================================
+   4. DAVID MARTINEZ — verified-file theme
+   Cyan/gold, heartbeat-pulse signature.
+========================================================= */
+
+.david-page-body {
+  background: radial-gradient(ellipse at 50% 0%, #0c1926 0%, #060d16 55%, #04080f 100%);
+  color: #dff2ff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.david-file-page { max-width: 960px; margin: 0 auto; padding: 40px 20px 100px; }
+
+.david-page-body .back-home { color: #6fd8ff; font-family: 'Chakra Petch', sans-serif; }
+
+/* ---- logo scaffolding ---- */
+.david-logo-root { position: relative; }
+.david-logo-wrap { position: relative; transition: transform 0.08s ease; }
+.david-logo-svg { display: block; width: 100%; height: auto; }
+
+.corner-mark-d { stroke: #3fa9d6; stroke-width: 1.5; opacity: 0.55; fill: none; }
+.tick-marks-d line { stroke: #2c6f92; stroke-width: 1; opacity: 0.6; }
+.divider-line-d { stroke: url(#goldEdge); stroke-width: 1.5; }
+
+.title-david, .title-martinez {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  text-anchor: middle;
+  letter-spacing: 4px;
+}
+.title-david { font-size: 84px; }
+.title-martinez { font-size: 54px; letter-spacing: 8px; }
+
+.outer-layer-d { fill: none; stroke: #0a3a52; stroke-width: 2; }
+.glow-layer-d { fill: #bdf0ff; filter: url(#glowCyan); }
+.flicker-layer-d { fill: #ffffff; opacity: 0.85; }
+.ghost-layer-d { fill: #ffcf7a; opacity: 0; }
+.ghost-layer-d.active { opacity: 0.35; }
+
+.subtitle-text-d {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-anchor: middle;
+  fill: #7fd9ff;
+  opacity: 0.8;
+}
+
+.pulse-line { stroke: #ffb347; stroke-width: 2; fill: none; opacity: 0.9; }
+.pulse-dot { fill: #ffb347; filter: url(#glowGold); }
+
+/* ---- hero ---- */
+.david-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid rgba(111, 216, 255, 0.18);
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(20, 40, 58, 0.35), rgba(6, 13, 22, 0.35));
+}
+.david-render {
+  width: 220px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 179, 71, 0.35);
+  box-shadow: 0 0 24px rgba(63, 169, 214, 0.25);
+}
+.david-info { flex: 1; }
+
+.verified-tag {
+  font-family: 'Chakra Petch', sans-serif;
+  color: #ffb347;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin: 0 0 6px;
+}
+.david-info h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0 0 14px;
+  color: #eaf8ff;
+}
+.david-stats p { margin: 4px 0; font-size: 14px; color: #b9dcef; }
+.david-stats strong { color: #6fd8ff; }
+
+.david-motto {
+  margin-top: 14px;
+  font-family: 'Chakra Petch', sans-serif;
+  letter-spacing: 2px;
+  color: #ffb347;
+  font-size: 14px;
+  transition: opacity 0.4s ease;
+}
+
+/* ---- sections ---- */
+.character-section-d {
+  border-left: 2px solid rgba(111, 216, 255, 0.35);
+  background: rgba(15, 28, 40, 0.35);
+}
+.character-section-d h2 { color: #6fd8ff; font-family: 'Chakra Petch', sans-serif; }
+.character-section-d h3 { color: #ffb347; font-family: 'Chakra Petch', sans-serif; }
+.character-section-d p, .character-section-d li { color: #cfe8f5; }
+.character-section-d blockquote { border-left: 3px solid #ffb347; color: #ffe3b0; }
+
+.quote-block-d blockquote {
+  font-size: 20px;
+  color: #eaf8ff;
+  border: none;
+  padding: 0;
+}
+
+.archive-caption {
+  color: #6fa3b8;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 10px !important;
+}
+
+/* ---- threat / status bars ---- */
+.stat-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+.stat-label { width: 190px; font-size: 13px; color: #9fd3e8; flex-shrink: 0; }
+.bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #3fa9d6, #6fd8ff); }
+.bar-fill.gold { background: linear-gradient(90deg, #b97a1f, #ffb347); }
+.bar-value { width: 46px; text-align: right; font-size: 12px; color: #8fb8cc; }
+
+/* ---- archive status footer ---- */
+.archive-status-d {
+  margin-top: 34px;
+  padding: 18px 26px;
+  border: 1px dashed rgba(111, 216, 255, 0.3);
+  border-radius: 4px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 13px;
+  color: #8fd3ec;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.archive-status-d .hl { color: #ffb347; }
+
+/* ---- hidden message, mouse-highlight only ---- */
+.hidden-note {
+  color: transparent;
+  text-shadow: none;
+  cursor: default;
+  user-select: text;
+}
+.hidden-note::selection {
+  color: #ffe3b0;
+  background: rgba(63, 169, 214, 0.35);
+}
+
+@media (max-width: 640px) {
+  .david-hero { flex-direction: column; }
+  .david-render { width: 160px; }
+  .title-david { font-size: 54px; }
+  .title-martinez { font-size: 34px; }
+}
+
 
 
 
