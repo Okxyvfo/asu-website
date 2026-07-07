@@ -6,208 +6,6 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    /* =========================================================
-       DAVID MARTINEZ — page-specific styles.
-       Namespaced under .david-* so this can be dropped straight
-       into the site, or merged into the shared style.css later.
-       Palette: cold Night City cyan against a warm signal-gold —
-       the "heart of the team" holding steady against the dark,
-       instead of Adam's red corruption glow.
-    ========================================================= */
-
-    .david-page-body {
-      background: radial-gradient(ellipse at 50% 0%, #0c1926 0%, #060d16 55%, #04080f 100%);
-      color: #dff2ff;
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-    }
-
-    .david-file-page { max-width: 960px; margin: 0 auto; padding: 40px 20px 100px; }
-
-    .back-home {
-      display: inline-block;
-      color: #6fd8ff;
-      text-decoration: none;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      opacity: 0.75;
-      margin-bottom: 20px;
-      transition: opacity 0.2s ease;
-    }
-    .back-home:hover { opacity: 1; }
-
-    /* ---------- Logo ---------- */
-    .david-logo-root { position: relative; }
-    .david-logo-wrap { position: relative; transition: transform 0.08s ease; }
-    .david-logo-svg { display: block; width: 100%; height: auto; }
-
-    .corner-mark-d { stroke: #3fa9d6; stroke-width: 1.5; opacity: 0.55; fill: none; }
-    .tick-marks-d line { stroke: #2c6f92; stroke-width: 1; opacity: 0.6; }
-    .divider-line-d { stroke: url(#goldEdge); stroke-width: 1.5; }
-
-    .title-david, .title-martinez {
-      font-family: 'Chakra Petch', sans-serif;
-      font-weight: 700;
-      text-anchor: middle;
-      letter-spacing: 4px;
-    }
-    .title-david { font-size: 84px; }
-    .title-martinez { font-size: 54px; letter-spacing: 8px; }
-
-    .outer-layer-d { fill: none; stroke: #0a3a52; stroke-width: 2; }
-    .glow-layer-d { fill: #bdf0ff; filter: url(#glowCyan); }
-    .flicker-layer-d { fill: #ffffff; opacity: 0.85; }
-    .ghost-layer-d { fill: #ffcf7a; opacity: 0; }
-    .ghost-layer-d.active { opacity: 0.35; }
-
-    .subtitle-text-d {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-anchor: middle;
-      fill: #7fd9ff;
-      opacity: 0.8;
-    }
-
-    .pulse-line { stroke: #ffb347; stroke-width: 2; fill: none; opacity: 0.9; }
-    .pulse-dot { fill: #ffb347; filter: url(#glowGold); }
-
-    /* ---------- Hero ---------- */
-    .david-hero {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      margin-top: 20px;
-      padding: 24px;
-      border: 1px solid rgba(111, 216, 255, 0.18);
-      border-radius: 4px;
-      background: linear-gradient(180deg, rgba(20, 40, 58, 0.35), rgba(6, 13, 22, 0.35));
-    }
-    .david-render {
-      width: 220px;
-      border-radius: 3px;
-      border: 1px solid rgba(255, 179, 71, 0.35);
-      box-shadow: 0 0 24px rgba(63, 169, 214, 0.25);
-    }
-    .david-info { flex: 1; }
-
-    .verified-tag {
-      font-family: 'Chakra Petch', sans-serif;
-      color: #ffb347;
-      letter-spacing: 3px;
-      font-size: 13px;
-      margin: 0 0 6px;
-    }
-    .david-info h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 32px;
-      letter-spacing: 2px;
-      margin: 0 0 14px;
-      color: #eaf8ff;
-    }
-    .david-stats p { margin: 4px 0; font-size: 14px; color: #b9dcef; }
-    .david-stats strong { color: #6fd8ff; }
-
-    .david-motto {
-      margin-top: 14px;
-      font-family: 'Chakra Petch', sans-serif;
-      letter-spacing: 2px;
-      color: #ffb347;
-      font-size: 14px;
-      transition: opacity 0.4s ease;
-    }
-
-    /* ---------- Sections ---------- */
-    .character-section-d {
-      margin-top: 34px;
-      padding: 22px 26px;
-      border-left: 2px solid rgba(111, 216, 255, 0.35);
-      background: rgba(15, 28, 40, 0.35);
-      border-radius: 0 4px 4px 0;
-    }
-    .character-section-d h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      color: #6fd8ff;
-      letter-spacing: 2px;
-      font-size: 19px;
-      margin: 0 0 12px;
-      text-transform: uppercase;
-    }
-    .character-section-d h3 {
-      font-family: 'Chakra Petch', sans-serif;
-      color: #ffb347;
-      font-size: 15px;
-      letter-spacing: 1.5px;
-      margin: 16px 0 6px;
-    }
-    .character-section-d p { line-height: 1.65; color: #cfe8f5; margin: 8px 0; }
-    .character-section-d ul { margin: 8px 0; padding-left: 20px; color: #cfe8f5; }
-    .character-section-d li { margin: 6px 0; line-height: 1.55; }
-    .character-section-d blockquote {
-      border-left: 3px solid #ffb347;
-      margin: 14px 0;
-      padding: 6px 0 6px 16px;
-      color: #ffe3b0;
-      font-style: italic;
-    }
-    .quote-block-d blockquote {
-      font-size: 20px;
-      color: #eaf8ff;
-      border: none;
-      padding: 0;
-    }
-
-    .archive-caption {
-      color: #6fa3b8;
-      font-size: 13px;
-      letter-spacing: 1px;
-      margin-bottom: 10px !important;
-    }
-
-    /* ---------- Threat / status bars ---------- */
-    .stat-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
-    .stat-label { width: 190px; font-size: 13px; color: #9fd3e8; flex-shrink: 0; }
-    .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #3fa9d6, #6fd8ff); }
-    .bar-fill.gold { background: linear-gradient(90deg, #b97a1f, #ffb347); }
-    .bar-value { width: 46px; text-align: right; font-size: 12px; color: #8fb8cc; }
-
-    /* ---------- Archive status footer ---------- */
-    .archive-status-d {
-      margin-top: 34px;
-      padding: 18px 26px;
-      border: 1px dashed rgba(111, 216, 255, 0.3);
-      border-radius: 4px;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 13px;
-      color: #8fd3ec;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .archive-status-d .hl { color: #ffb347; }
-
-    /* ---------- Hidden message, mouse-highlight only ---------- */
-    .hidden-note {
-      color: transparent;
-      text-shadow: none;
-      cursor: default;
-      user-select: text;
-    }
-    .hidden-note::selection {
-      color: #ffe3b0;
-      background: rgba(63, 169, 214, 0.35);
-    }
-
-    @media (max-width: 640px) {
-      .david-hero { flex-direction: column; }
-      .david-render { width: 160px; }
-      .title-david { font-size: 54px; }
-      .title-martinez { font-size: 34px; }
-    }
-  </style>
 </head>
 
 <body class="david-page-body">
@@ -286,7 +84,7 @@
         <h2>DAVID MARTINEZ</h2>
 
         <div class="david-stats">
-          <p><strong>Actor:</strong> loona09806</p>
+          <p><strong>Actor:</strong> —</p>
           <p><strong>Team:</strong> TEAM 1</p>
           <p><strong>Status:</strong> SAFE</p>
           <p><strong>Archive Classification:</strong> EXIT TEAM MEMBER</p>
@@ -435,6 +233,22 @@
       <span class="hidden-note">David... if you're reading this, don't trust the cameras. —J</span>
     </p>
 
+
+    <!-- ===== VOICE TRANSMISSION (reusable — only change data-audio-src) ===== -->
+    <section class="voice-transmission" data-audio-src="../character_audio/david_quote.mp3">
+      <button class="vt-button" type="button" aria-label="Play voice transmission">
+        <svg class="vt-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+          <path class="vt-wave vt-wave-1" d="M15.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="vt-wave vt-wave-2" d="M18 6a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="vt-text">
+        <p class="vt-label">VOICE TRANSMISSION</p>
+        <p class="vt-sub">Recovered Archive Recording</p>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -515,6 +329,8 @@
       }, 350);
     }, 4200);
   </script>
+
+  <script src="../voice-transmission.js"></script>
 
 </body>
 </html>
