@@ -229,6 +229,22 @@
 
     <p class="corner-note-g">"Everyone needs someone like Gyro." — Joker</p>
 
+
+    <!-- ===== VOICE TRANSMISSION (reusable — only change data-audio-src) ===== -->
+    <section class="voice-transmission" data-audio-src="../character_audio/gyro_quote.mp3">
+      <button class="vt-button" type="button" aria-label="Play voice transmission">
+        <svg class="vt-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+          <path class="vt-wave vt-wave-1" d="M15.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="vt-wave vt-wave-2" d="M18 6a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="vt-text">
+        <p class="vt-label">VOICE TRANSMISSION</p>
+        <p class="vt-sub">Recovered Archive Recording</p>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -300,6 +316,8 @@
       }
     });
   </script>
+
+  <script src="../voice-transmission.js"></script>
 
 </body>
 </html>
