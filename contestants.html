@@ -5,7 +5,7 @@
   <title>Contestant Archive | Anime Showdown Ultimax</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="archive-page-body">
   <header class="archive-header">
     <a class="back-home" href="index.html">← BACK TO HOME</a>
     <p class="archive-label">ASU DATABASE</p>
@@ -13,182 +13,642 @@
     <p class="archive-subtitle">
       Files recovered from the Anime Showdown Ultimax Archive. Some records may be missing, changed, or restricted by the Host.
     </p>
+    <p class="archive-ticker" id="archiveTicker"></p>
   </header>
 
   <main class="contestant-archive">
-    <section class="archive-grid">
 
-      <a class="contestant-card adam" href="characters/adam.html">
+    <!-- ===== ARCHIVE SUMMARY PANEL ===== -->
+    <section class="archive-summary">
+      <div class="summary-stat">
+        <p class="summary-label">FILES RECOVERED</p>
+        <p class="summary-value">19</p>
+      </div>
+      <div class="summary-stat">
+        <p class="summary-label">ACTIVE EXIT TEAM MEMBERS</p>
+        <p class="summary-value">5</p>
+      </div>
+      <div class="summary-stat summary-stat-wide">
+        <p class="summary-label">HOST THREAT LEVEL</p>
+        <div class="bar-track summary-bar"><div class="bar-fill red" style="width:95%"></div></div>
+      </div>
+      <div class="summary-stat">
+        <p class="summary-label">DATABASE STATUS</p>
+        <p class="summary-value summary-online"><span class="online-dot"></span>ONLINE</p>
+      </div>
+    </section>
+
+    <!-- ===== TEAM 1 ===== -->
+    <section class="team-block team-1-block">
+      <h2 class="team-heading team-1-heading">TEAM 1</h2>
+      <div class="archive-grid">
+      <a class="contestant-card" href="characters/adam.html" data-team="team-1">
         <div class="card-glow"></div>
+        <div class="card-scanline"></div>
         <div class="card-image-wrap">
           <img src="characters/adami.png" alt="Adam Smasher" onerror="this.src='characters/placeholder.png'">
         </div>
-        <div class="card-info"><span>RESTRICTED</span><h3>Adam Smasher</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card ayato" href="characters/ayato.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/ayatoi.png" alt="Ayato" onerror="this.src='characters/placeholder.png'">
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-restricted">RESTRICTED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Adam Smasher</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
         </div>
-        <div class="card-info"><span>MONITORED</span><h3>Ayato</h3><p>OPEN FILE</p></div>
       </a>
-
-      <a class="contestant-card david" href="characters/david.html">
+      <a class="contestant-card" href="characters/david.html" data-team="team-1">
         <div class="card-glow"></div>
+        <div class="card-scanline"></div>
         <div class="card-image-wrap">
-          <img src="characters/davidi.png" alt="David" onerror="this.src='characters/placeholder.png'">
+          <img src="characters/davidi.png" alt="David Martinez" onerror="this.src='characters/placeholder.png'">
         </div>
-        <div class="card-info"><span>MONITORED</span><h3>David</h3><p>OPEN FILE</p></div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">David Martinez</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
       </a>
-
-      <a class="contestant-card escanor" href="characters/escanor.html">
+      <a class="contestant-card" href="characters/ethan.html" data-team="team-1">
         <div class="card-glow"></div>
+        <div class="card-scanline"></div>
         <div class="card-image-wrap">
-          <img src="characters/escanori.png" alt="Escanor" onerror="this.src='characters/placeholder.png'">
+          <img src="characters/ethani.png" alt="Ethan Gold" onerror="this.src='characters/placeholder.png'">
         </div>
-        <div class="card-info"><span>MONITORED</span><h3>Escanor</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card ethan" href="characters/ethan.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/ethani.png" alt="Ethan" onerror="this.src='characters/placeholder.png'">
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Ethan Gold</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
         </div>
-        <div class="card-info"><span>MONITORED</span><h3>Ethan</h3><p>OPEN FILE</p></div>
       </a>
-
-      <a class="contestant-card frieza" href="characters/frieza.html">
+      <a class="contestant-card" href="characters/frieza.html" data-team="team-1">
         <div class="card-glow"></div>
+        <div class="card-scanline"></div>
         <div class="card-image-wrap">
           <img src="characters/friezai.png" alt="Frieza" onerror="this.src='characters/placeholder.png'">
         </div>
-        <div class="card-info"><span>HIGH PRIORITY</span><h3>Frieza</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card subaru" href="characters/subaru.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/subarui.png" alt="Subaru" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Subaru</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card garou" href="characters/garou.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/garoui.png" alt="Garou" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Garou</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card gyro" href="characters/gyro.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/gyroi.png" alt="Gyro" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Gyro</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card joker" href="characters/joker.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/jokeri.png" alt="Joker" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>HIGH PRIORITY</span><h3>Joker</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card law" href="characters/law.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/lawi.png" alt="Law" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Law</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card mizore" href="characters/mizore.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/mizorei.png" alt="Mizore" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Mizore</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card musashi" href="characters/musashi.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/musashii.png" alt="Musashi" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Musashi</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card reze" href="characters/reze.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/rezei.png" alt="Reze" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Reze</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card ryu" href="characters/ryu.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/ryui.png" alt="Ryu" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Ryu</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card gojo" href="characters/gojo.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/gojoi.png" alt="Gojo" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>HIGH PRIORITY</span><h3>Gojo</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card tanjiro" href="characters/tanjiro.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/tanjiroi.png" alt="Tanjiro" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Tanjiro</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card yuji" href="characters/yuji.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/yujii.png" alt="Yuji" onerror="this.src='characters/placeholder.png'">
-        </div>
-        <div class="card-info"><span>MONITORED</span><h3>Yuji</h3><p>OPEN FILE</p></div>
-      </a>
-
-      <a class="contestant-card light" href="characters/light.html">
-        <div class="card-glow"></div>
-        <div class="card-image-wrap">
-          <img src="characters/lighti.png" alt="Light Yagami" onerror="this.src='characters/placeholder.png'">
-        </div>
         <div class="card-info">
-          <span>HIGH PRIORITY</span>
-          <h3>Light Yagami</h3>
-          <p>OPEN FILE</p>
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Frieza</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
         </div>
       </a>
-
-      <a class="contestant-card vegeta" href="characters/vegeta.html">
+      <a class="contestant-card" href="characters/vegeta.html" data-team="team-1">
         <div class="card-glow"></div>
+        <div class="card-scanline"></div>
         <div class="card-image-wrap">
           <img src="characters/vegetai.png" alt="Vegeta" onerror="this.src='characters/placeholder.png'">
         </div>
         <div class="card-info">
-          <span>HIGH PRIORITY</span>
-          <h3>Vegeta</h3>
-          <p>OPEN FILE</p>
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Vegeta</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
         </div>
       </a>
-
+      <a class="contestant-card" href="characters/joker.html" data-team="team-1">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/jokeri.png" alt="Joker" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Joker</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/musashi.html" data-team="team-1">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/musashii.png" alt="Musashi Miyamoto" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Musashi Miyamoto</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/reze.html" data-team="team-1">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/rezei.png" alt="Reze" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Reze</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/yuji.html" data-team="team-1">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/yujii.png" alt="Yuji Itadori" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Yuji Itadori</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/mizore.html" data-team="team-1">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/mizorei.png" alt="Mizore Yoroizuka" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-1">TEAM 1</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Mizore Yoroizuka</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      </div>
     </section>
+
+    <!-- ===== TEAM 2 ===== -->
+    <section class="team-block team-2-block">
+      <h2 class="team-heading team-2-heading">TEAM 2</h2>
+      <div class="archive-grid">
+      <a class="contestant-card" href="characters/gyro.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/gyroi.png" alt="Gyro Zeppeli" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Gyro Zeppeli</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/light.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/lighti.png" alt="Light Yagami" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-special-observation">SPECIAL OBSERVATION</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Light Yagami</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/garou.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/garoui.png" alt="Garou" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Garou</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/ryu.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/ryui.png" alt="Ryu Ishigori" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Ryu Ishigori</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/gojo.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/gojoi.png" alt="Satoru Gojo" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Satoru Gojo</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/ayato.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/ayatoi.png" alt="Ayato" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Ayato</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/escanor.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/escanori.png" alt="Escanor" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Escanor</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/tanjiro.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/tanjiroi.png" alt="Tanjiro" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Tanjiro</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card" href="characters/subaru.html" data-team="team-2">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/subarui.png" alt="Subaru" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-team-2">TEAM 2</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Subaru</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <!-- ===== EXIT TEAM ===== -->
+    <section class="team-block exit-team-block">
+      <h2 class="team-heading exit-team-heading">EXIT TEAM</h2>
+      <div class="archive-grid">
+      <a class="contestant-card exit-card" href="characters/joker.html" data-team="exit-team">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/jokeri.png" alt="Joker" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-exit-team">EXIT TEAM</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Joker</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card exit-card" href="characters/gyro.html" data-team="exit-team">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/gyroi.png" alt="Gyro Zeppeli" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-exit-team">EXIT TEAM</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Gyro Zeppeli</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card exit-card" href="characters/david.html" data-team="exit-team">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/davidi.png" alt="David Martinez" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-monitored">MONITORED</span>
+            <span class="card-team-tag tag-exit-team">EXIT TEAM</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">David Martinez</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card exit-card" href="characters/frieza.html" data-team="exit-team">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/friezai.png" alt="Frieza" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-high-priority">HIGH PRIORITY</span>
+            <span class="card-team-tag tag-exit-team">EXIT TEAM</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Frieza</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      <a class="contestant-card exit-card" href="characters/light.html" data-team="exit-team">
+        <div class="card-glow"></div>
+        <div class="card-scanline"></div>
+        <div class="card-image-wrap">
+          <img src="characters/lighti.png" alt="Light Yagami" onerror="this.src='characters/placeholder.png'">
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <span class="card-status status-special-observation">SPECIAL OBSERVATION</span>
+            <span class="card-team-tag tag-exit-team">EXIT TEAM</span>
+          </div>
+          <h3 class="card-name">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Archive flagged">
+              <path d="M12 3 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              <line x1="12" y1="9" x2="12" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            </svg>
+            <span class="glitch-name">Light Yagami</span>
+          </h3>
+          <p class="open-file">OPEN FILE →</p>
+        </div>
+      </a>
+      </div>
+    </section>
+
   </main>
 
   <script src="script.js"></script>
+  <script>
+    /* ---------- rotating archive ticker under the title ---------- */
+    const archiveMessages = [
+      "Searching contestant files...",
+      "Host surveillance active.",
+      "Archive integrity stable.",
+      "Recovered records loaded.",
+      "Warning: unauthorized access detected.",
+      "Monitoring contestant movement..."
+    ];
+    const tickerEl = document.getElementById("archiveTicker");
+
+    function showTickerMessage() {
+      tickerEl.textContent = archiveMessages[Math.floor(Math.random() * archiveMessages.length)];
+      tickerEl.classList.add("visible");
+      setTimeout(() => tickerEl.classList.remove("visible"), 4500);
+      setTimeout(showTickerMessage, 10000 + Math.random() * 10000);
+    }
+    setTimeout(showTickerMessage, 2500);
+
+    /* ---------- independent per-card name glitch ---------- */
+    const HOMOGLYPHS = { A: "Λ", E: "Ǝ", I: "1", O: "Ø", S: "$", T: "†", U: "Ʊ", C: "Ç", N: "Ñ" };
+
+    function glitchName(el) {
+      const original = el.dataset.original;
+      const chars = original.split("");
+      const candidates = [];
+      chars.forEach((c, i) => {
+        if (HOMOGLYPHS[c.toUpperCase()]) candidates.push(i);
+      });
+      if (candidates.length === 0) return;
+      const idx = candidates[Math.floor(Math.random() * candidates.length)];
+      chars[idx] = HOMOGLYPHS[chars[idx].toUpperCase()];
+      el.textContent = chars.join("");
+      setTimeout(() => { el.textContent = original; }, 200);
+    }
+
+    function scheduleGlitch(el) {
+      const delay = 8000 + Math.random() * 12000;
+      setTimeout(() => {
+        glitchName(el);
+        scheduleGlitch(el);
+      }, delay);
+    }
+
+    document.querySelectorAll(".glitch-name").forEach(el => {
+      el.dataset.original = el.textContent;
+      scheduleGlitch(el);
+    });
+
+    /* ---------- rare single-card flicker ---------- */
+    function randomCardFlicker() {
+      const cards = document.querySelectorAll(".contestant-card");
+      const card = cards[Math.floor(Math.random() * cards.length)];
+      card.classList.add("card-flicker");
+      setTimeout(() => card.classList.remove("card-flicker"), 350);
+      setTimeout(randomCardFlicker, 20000 + Math.random() * 25000);
+    }
+    setTimeout(randomCardFlicker, 15000 + Math.random() * 10000);
+  </script>
 </body>
 </html>
