@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <title>Lore | Anime Showdown Ultimax</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="lore-body">
+<body class="lore-body" id="loreBody">
+
+  <div class="lore-noise"></div>
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- periodic "HOST OBSERVING..." flicker -->
+  <div class="host-observing-overlay" id="hostObservingOverlay">
+    <p>HOST OBSERVING...</p>
+  </div>
+
+  <!-- final scroll-to-bottom secret -->
+  <div class="scroll-secret-overlay" id="scrollSecretOverlay">
+    <p>You weren't supposed to read this much.</p>
+  </div>
 
   <main class="lore-page">
 
@@ -125,11 +140,16 @@
 
     <section class="lore-grid">
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 001</span><span>STATUS: PUBLIC</span></div>
-        <h2>What Is Anime Showdown Ultimax?</h2>
+      <article class="lore-file" data-status="public">
+        <div class="file-top"><span>FILE 001</span><span class="file-status status-public">PUBLIC</span></div>
+        <h2 class="file-title" data-title="What Is Anime Showdown Ultimax?"></h2>
         <p>
-anime showdown ultimax is a roblox reality show but its not like anything else out there, basically a bunch of anime characters get thrown together as contestants into a world where u cant even tell whats fake n whats real no more. it does have scripted intros n dialogue and the lore keeps getting deeper and deeper but the actual competition part is all real, nothing scripted at all, every challenge really happens n what happens depends on what the characters actually do so u get this crazy unpredictable tv that nobody sees comming.
+          Anime Showdown Ultimax is a Roblox reality show, but it isn't like anything else out there.
+          A collection of anime characters get thrown together as contestants into a world where the line
+          between what's scripted and what's real starts to disappear. The story has intros and dialogue
+          written in advance, and the lore keeps getting deeper the longer the show runs — but the
+          competition itself is not scripted at all. Every challenge really happens, and what happens next
+          depends entirely on what the contestants actually do.
         </p>
         <p>
           That is what makes ASU different. The story has a script, but the competition does not.
@@ -137,9 +157,9 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         </p>
       </article>
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 002</span><span>STATUS: PUBLIC</span></div>
-        <h2>The Main Story</h2>
+      <article class="lore-file" data-status="public-record">
+        <div class="file-top"><span>FILE 002</span><span class="file-status status-public-record">PUBLIC RECORD</span></div>
+        <h2 class="file-title" data-title="The Main Story"></h2>
         <p>
           One night, the Host decided he wanted to create his own reality show after watching Total Drama again.
           He built an island-like city filled with pieces of anime worlds he liked, then began searching for contestants.
@@ -151,9 +171,9 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         </p>
       </article>
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 003</span><span>STATUS: WATCHED</span></div>
-        <h2>The Host</h2>
+      <article class="lore-file" data-status="host-verified">
+        <div class="file-top"><span>FILE 003</span><span class="file-status status-host-verified">HOST VERIFIED</span></div>
+        <h2 class="file-title" data-title="The Host"></h2>
         <p>
           Nobody knows who the Host really is.
           Most contestants have never seen his true form.
@@ -166,9 +186,9 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         </p>
       </article>
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 004</span><span>STATUS: CLASSIFIED</span></div>
-        <h2>The Exit Team</h2>
+      <article class="lore-file" data-status="corrupted">
+        <div class="file-top"><span>FILE 004</span><span class="file-status status-corrupted">CORRUPTED</span></div>
+        <h2 class="file-title" data-title="The Exit Team"></h2>
         <p>
           Joker realized early that escape would not be easy.
           Instead of becoming another pawn in the Host's game, he formed a hidden alliance called the Exit Team.
@@ -176,18 +196,26 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         <p>
           Their goal is simple: survive the show, uncover the Host's secrets, and find a way back home.
         </p>
+        <p>
+          The Exit Team has never been able to stay the same for long. Members disappear, get replaced, or vanish
+          from the Archive entirely — and somehow, the group keeps finding a way to continue anyway.
+        </p>
+        <p>
+          Its newest member, Light Yagami, joined believing he is the only person on the island capable of
+          outsmarting the Host.
+        </p>
         <ul>
+          <li>Joker (Leader)</li>
           <li>Gyro Zeppeli</li>
-          <li>Joker</li>
-          <li>Trafalgar Law</li>
-          <li>Frieza</li>
           <li>David Martinez</li>
+          <li>Frieza</li>
+          <li>Light Yagami</li>
         </ul>
       </article>
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 005</span><span>STATUS: RESTRICTED</span></div>
-        <h2>Adam Smasher</h2>
+      <article class="lore-file" data-status="restricted">
+        <div class="file-top"><span>FILE 005</span><span class="file-status status-restricted">RESTRICTED</span></div>
+        <h2 class="file-title" data-title="Adam Smasher"></h2>
         <p>
           Adam Smasher was taken before the rest of the contestants.
           The Host wanted Adam for one reason: information.
@@ -199,9 +227,9 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         </p>
       </article>
 
-      <article class="lore-file">
-        <div class="file-top"><span>FILE 006</span><span>STATUS: ACTIVE</span></div>
-        <h2>The Challenges</h2>
+      <article class="lore-file" data-status="monitored">
+        <div class="file-top"><span>FILE 006</span><span class="file-status status-monitored">MONITORED</span></div>
+        <h2 class="file-title" data-title="The Challenges"></h2>
         <p>
           The challenges are where the show becomes real.
           Even though the story is planned, the results are not.
@@ -212,12 +240,15 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
         </p>
       </article>
 
-      <article class="lore-file redacted-file">
-        <div class="file-top"><span>FILE 007</span><span>STATUS: LOCKED</span></div>
-        <h2>Unknown Files</h2>
-        <p class="redacted-line"></p>
-        <p class="redacted-line short"></p>
-        <p class="redacted-line"></p>
+      <article class="lore-file redacted-file" data-status="unknown">
+        <div class="file-top"><span>FILE 007</span><span class="file-status status-unknown">UNKNOWN</span></div>
+        <h2 class="file-title" data-title="Unknown Files"></h2>
+        <div class="redacted-block">
+          <p class="redacted-line"><span class="redacted-word" data-word="HOST"></span></p>
+          <p class="redacted-line short"><span class="redacted-word" data-word="VOID"></span></p>
+          <p class="redacted-line"><span class="redacted-word" data-word="PROJECT"></span></p>
+          <p class="redacted-line short"><span class="redacted-word" data-word="SUBJECT"></span></p>
+        </div>
         <p class="access-denied">ACCESS DENIED</p>
       </article>
 
@@ -228,44 +259,218 @@ anime showdown ultimax is a roblox reality show but its not like anything else o
       <p>Enter access code to request restricted file access.</p>
 
       <div class="terminal-row">
-        <input id="loreCodeInput" type="text" placeholder="ENTER ACCESS CODE">
+        <input id="loreCodeInput" type="text" placeholder="ENTER ACCESS CODE" autocomplete="off">
         <button id="loreCodeButton">VERIFY</button>
       </div>
 
       <p id="terminalResult" class="terminal-result">Unauthorized access will be logged.</p>
     </section>
 
+    <section class="archive-notes">
+      <h2>ARCHIVE NOTES</h2>
+      <p>
+        The Archive grows every day.<br>
+        The more contestants survive...<br>
+        The more secrets become available.
+      </p>
+      <div class="archive-notes-stats">
+        <div><span class="notes-label">Recovered Files:</span><span class="notes-value">3</span></div>
+        <div><span class="notes-label">Unknown Files:</span><span class="notes-value">???</span></div>
+      </div>
+    </section>
+
   </main>
 
   <script>
-  const input = document.getElementById("loreCodeInput");
-  const button = document.getElementById("loreCodeButton");
-  const result = document.getElementById("terminalResult");
+    /* ============ ACCESS TERMINAL ============ */
+    const input = document.getElementById("loreCodeInput");
+    const button = document.getElementById("loreCodeButton");
+    const result = document.getElementById("terminalResult");
+    const terminal = document.querySelector(".access-terminal");
 
-  button.addEventListener("click", () => {
-    const code = input.value.trim().toUpperCase();
-
-    if (!code) {
-      result.textContent = "NO CODE ENTERED.";
-      return;
+    function flashTerminal(kind) {
+      terminal.classList.remove("flash-green", "flash-red");
+      void terminal.offsetWidth; // restart animation
+      terminal.classList.add(kind === "ok" ? "flash-green" : "flash-red");
+      setTimeout(() => terminal.classList.remove("flash-green", "flash-red"), 700);
     }
 
-    if (code === "P34C3-W4RP") {
-  window.location.href = "hotlog-001.html";
-} else if (code === "SM4SH3R-D34L") {
-  window.location.href = "hotlog-002.html";
-} else if (code === "TRUE-F0RM") {
-  window.location.href = "hotlog-003.html";
-} else {
-  result.textContent = "INVALID CODE. ATTEMPT RECORDED.";
-}
-    if (code === "F0UND-Y0U") {
-  result.textContent = "ACCESS GRANTED. OPENING HOTLOG 003...";
-  setTimeout(() => {
-    window.location.href = "hotlog-003.html";
-  }, 1200);
-}
-  });
-</script>
+    button.addEventListener("click", () => {
+      const code = input.value.trim().toUpperCase();
+
+      if (!code) {
+        result.textContent = "NO CODE ENTERED.";
+        return;
+      }
+
+      if (code === "HELLO HOST") {
+        result.textContent = "...";
+        flashTerminal("ok");
+        setTimeout(() => {
+          result.textContent = "I KNOW.";
+        }, 900);
+        setTimeout(() => {
+          result.textContent = "Continue reading.";
+        }, 2900);
+        input.value = "";
+        return;
+      }
+
+      if (code === "P34C3-W4RP") {
+        flashTerminal("ok");
+        result.textContent = "ACCESS GRANTED. OPENING HOTLOG 001...";
+        setTimeout(() => { window.location.href = "hotlog-001.html"; }, 900);
+      } else if (code === "SM4SH3R-D34L") {
+        flashTerminal("ok");
+        result.textContent = "ACCESS GRANTED. OPENING HOTLOG 002...";
+        setTimeout(() => { window.location.href = "hotlog-002.html"; }, 900);
+      } else if (code === "TRUE-F0RM") {
+        flashTerminal("ok");
+        result.textContent = "ACCESS GRANTED. OPENING HOTLOG 003...";
+        setTimeout(() => { window.location.href = "hotlog-003.html"; }, 900);
+      } else if (code === "F0UND-Y0U") {
+        flashTerminal("ok");
+        result.textContent = "ACCESS GRANTED. OPENING HOTLOG 003...";
+        setTimeout(() => { window.location.href = "hotlog-003.html"; }, 1200);
+      } else {
+        flashTerminal("bad");
+        result.textContent = "INVALID CODE. ATTEMPT RECORDED.";
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") button.click();
+    });
+
+    /* ============ FILE REVEAL + TYPEWRITER ============ */
+    function typewrite(el, text, speed) {
+      el.textContent = "";
+      let i = 0;
+      const cursor = () => el.classList.add("typing");
+      cursor();
+      const interval = setInterval(() => {
+        el.textContent = text.slice(0, i + 1);
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+          el.classList.remove("typing");
+        }
+      }, speed);
+    }
+
+    const fileObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.revealed) {
+          entry.target.dataset.revealed = "1";
+          entry.target.classList.add("visible");
+          const titleEl = entry.target.querySelector(".file-title");
+          if (titleEl) {
+            const text = titleEl.dataset.title;
+            setTimeout(() => typewrite(titleEl, text, 28), 250);
+          }
+          fileObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll(".lore-file").forEach((el) => fileObserver.observe(el));
+
+    /* ============ AMBIENT SENTENCE GLITCH ============ */
+    const GLITCH_CHARS = "!<>-_\\/[]{}—=+*^?#░▒▓█▄▀";
+    function randomGlitchChar() {
+      return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+    }
+
+    function ambientSentenceGlitch() {
+      const paragraphs = document.querySelectorAll(".lore-file p:not(.access-denied)");
+      const target = paragraphs[Math.floor(Math.random() * paragraphs.length)];
+
+      if (target && !target.dataset.glitching && target.textContent.trim().length > 0) {
+        const original = target.textContent;
+        const chars = original.split("");
+        const scrambleCount = Math.min(6, chars.length);
+        const usedIndexes = new Set();
+
+        target.dataset.glitching = "1";
+        for (let n = 0; n < scrambleCount; n++) {
+          let idx;
+          do { idx = Math.floor(Math.random() * chars.length); } while (usedIndexes.has(idx) || chars[idx] === " ");
+          usedIndexes.add(idx);
+          chars[idx] = randomGlitchChar();
+        }
+        target.textContent = chars.join("");
+
+        setTimeout(() => {
+          target.textContent = original;
+          delete target.dataset.glitching;
+        }, 200);
+      }
+
+      setTimeout(ambientSentenceGlitch, 3500 + Math.random() * 6000);
+    }
+    setTimeout(ambientSentenceGlitch, 4000);
+
+    /* ============ FILE 007 REDACTED WORD FLASHES ============ */
+    function flashRedactedWords() {
+      document.querySelectorAll(".redacted-word").forEach((el) => {
+        if (Math.random() > 0.55) {
+          el.textContent = el.dataset.word;
+          el.classList.add("visible");
+          setTimeout(() => {
+            el.classList.remove("visible");
+            el.textContent = "";
+          }, 260);
+        }
+      });
+      setTimeout(flashRedactedWords, 1800 + Math.random() * 2200);
+    }
+    setTimeout(flashRedactedWords, 2000);
+
+    /* ============ HOST OBSERVING FLICKER ============ */
+    const loreBody = document.getElementById("loreBody");
+    const hostOverlay = document.getElementById("hostObservingOverlay");
+
+    function hostObserve() {
+      loreBody.classList.add("host-flicker");
+      hostOverlay.classList.add("visible");
+      setTimeout(() => {
+        loreBody.classList.remove("host-flicker");
+        hostOverlay.classList.remove("visible");
+      }, 1000);
+      setTimeout(hostObserve, 20000 + Math.random() * 20000);
+    }
+    setTimeout(hostObserve, 20000 + Math.random() * 20000);
+
+    /* ============ MOUSE-FOLLOWING RED LIGHT ============ */
+    const mouseGlow = document.getElementById("mouseGlow");
+    document.addEventListener("mousemove", (e) => {
+      mouseGlow.style.left = `${e.clientX}px`;
+      mouseGlow.style.top = `${e.clientY}px`;
+    });
+
+    /* ============ SCROLL-TO-BOTTOM SECRET ============ */
+    const scrollSecretOverlay = document.getElementById("scrollSecretOverlay");
+    let scrollSecretShown = false;
+
+    window.addEventListener("scroll", () => {
+      if (scrollSecretShown) return;
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
+
+      if (scrolledToBottom) {
+        scrollSecretShown = true;
+        setTimeout(() => {
+          scrollSecretOverlay.classList.add("black");
+          setTimeout(() => {
+            scrollSecretOverlay.classList.add("visible");
+          }, 500);
+          setTimeout(() => {
+            scrollSecretOverlay.classList.remove("visible");
+            setTimeout(() => scrollSecretOverlay.classList.remove("black"), 600);
+          }, 2500);
+        }, 150);
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
