@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Anime Showdown Ultimax</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="site-page-body">
 
   <header class="site-header">
 
@@ -79,16 +81,22 @@
 
     <nav class="asu-nav">
       <div class="nav-row">
-        <a href="index.html" class="asu-button">HOME</a>
-        <a href="contestants.html" class="asu-button">CONTESTANTS</a>
-        <a href="episodes.html" class="asu-button">EPISODES</a>
-        <a href="eliminations.html" class="asu-button">ELIMINATIONS</a>
+        <a href="index.html" class="asu-button">🏠 HOME</a>
+        <a href="contestants.html" class="asu-button">🎭 CONTESTANTS</a>
+        <a href="episodes.html" class="asu-button">📺 EPISODES</a>
+        <a href="eliminations.html" class="asu-button">⚔️ ELIMINATIONS</a>
+        <a href="lore.html" class="asu-button">📜 LORE</a>
+        <a href="map.html" class="asu-button">🗺️ MAP</a>
+        <a href="join.html" class="asu-button">✅ JOIN ASU</a>
       </div>
       <div class="nav-row">
-        <a href="lore.html" class="asu-button">LORE</a>
-        <a href="map.html" class="asu-button">MAP</a>
-        <a href="join.html" class="asu-button">JOIN ASU</a>
-        <a href="updates.html" class="asu-button">UPDATES</a>
+        <a href="updates.html" class="asu-button">🔔 UPDATES</a>
+        <a href="news.html" class="asu-button">📰 NEWS</a>
+        <a href="classified.html" class="asu-button">📂 CLASSIFIED FILES</a>
+        <a href="surveillance.html" class="asu-button">📹 SURVEILLANCE</a>
+        <a href="deleted.html" class="asu-button">💀 DELETED FILES</a>
+        <a href="themes.html" class="asu-button">🎵 THEMES</a>
+        <a href="experiments.html" class="asu-button">🧪 EXPERIMENTS</a>
       </div>
     </nav>
   </header>
@@ -146,6 +154,91 @@
       </aside>
     </section>
 
+    <!-- ===== ARCHIVE DASHBOARD ===== -->
+    <section class="dashboard-grid">
+      <article class="dashboard-card">
+        <p class="dc-label">LATEST BROADCAST</p>
+        <p class="dc-value">Episode 1</p>
+        <p class="dc-sub">Recording not yet available. Check back after release.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">LATEST HOTLOG</p>
+        <p class="dc-value">Hotlog 003</p>
+        <p class="dc-sub">Recovered fragment. Access requires a valid terminal code.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">CURRENT DAY</p>
+        <p class="dc-value">Day 1</p>
+        <p class="dc-sub">The competition has not yet begun.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">RECOVERED FILES</p>
+        <p class="dc-value">47</p>
+        <p class="dc-sub">Some files remain locked or corrupted.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">EXIT TEAM STATUS</p>
+        <p class="dc-value">5 Active</p>
+        <p class="dc-sub">Membership has changed before. It may change again.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">HOST THREAT LEVEL</p>
+        <div class="bar-track" style="margin-top:6px;"><div class="bar-fill red" style="width:95%"></div></div>
+        <p class="dc-sub">Classification: EXTREME.</p>
+      </article>
+
+      <article class="dashboard-card">
+        <p class="dc-label">CURRENT CHALLENGE</p>
+        <p class="dc-value">None Active</p>
+        <p class="dc-sub">The first challenge has not been scheduled yet.</p>
+      </article>
+
+      <article class="dashboard-card wide">
+        <p class="dc-label">LATEST ARCHIVE UPDATE</p>
+        <p class="dc-value">Exit Team roster updated</p>
+        <p class="dc-sub">A contestant file was marked missing. A new member was added shortly after. See LORE for details.</p>
+      </article>
+    </section>
+
+    <!-- ===== QUICK LINKS ===== -->
+    <section class="quicklinks-grid">
+      <a class="quicklink-card" href="news.html">
+        <span class="quicklink-icon">📰</span>
+        <h3>ASU News</h3>
+        <p>Team victories, eliminations, alliance rumors, and Host announcements.</p>
+      </a>
+      <a class="quicklink-card" href="classified.html">
+        <span class="quicklink-icon">📂</span>
+        <h3>Classified Files</h3>
+        <p>Recovered documents the Host never meant to leave public.</p>
+      </a>
+      <a class="quicklink-card" href="surveillance.html">
+        <span class="quicklink-icon">📹</span>
+        <h3>Surveillance</h3>
+        <p>Live security feeds from around the island. Most show nothing.</p>
+      </a>
+      <a class="quicklink-card" href="deleted.html">
+        <span class="quicklink-icon">💀</span>
+        <h3>Deleted Files</h3>
+        <p>Records the Archive tried to erase. Some are slowly coming back.</p>
+      </a>
+      <a class="quicklink-card" href="themes.html">
+        <span class="quicklink-icon">🎵</span>
+        <h3>Themes</h3>
+        <p>Every contestant's theme song and mood, recovered from the Archive.</p>
+      </a>
+      <a class="quicklink-card" href="experiments.html">
+        <span class="quicklink-icon">🧪</span>
+        <h3>Experiments</h3>
+        <p>The Host's recorded experiments on the contestants. Not all of them failed.</p>
+      </a>
+    </section>
+
     <section class="info-grid">
       <article class="info-card">
         <span class="card-number">01</span>
@@ -172,6 +265,20 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-stat">ARCHIVE VERSION<b>v2.4.1</b></div>
+      <div class="footer-stat">RECOVERED FILES<b>47</b></div>
+      <div class="footer-stat">CURRENT BUILD<b>SEASON 1 (PRE-RELEASE)</b></div>
+      <div class="footer-stat">DISCORD<b><a class="footer-discord" href="#">Join the server</a></b></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Anime Showdown Ultimax. All rights reserved.</span>
+      <span class="footer-creepy">The Host is always watching.</span>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
+  <script src="site-common.js"></script>
 </body>
 </html>
