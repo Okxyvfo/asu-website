@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map | Anime Showdown Ultimax</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="site-page-body">
+
+  <header class="site-header">
+
+    <section class="logo-box" id="logoBox">
+      <svg class="logo-eye" viewBox="0 0 100 100" width="118" height="118" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="1.8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <radialGradient id="irisGrad" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#8b0000" />
+            <stop offset="100%" stop-color="#1a0000" />
+          </radialGradient>
+        </defs>
+
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#dc143c" stroke-width="0.6" opacity="0.65" />
+
+        <g class="logo-ring">
+          <line x1="50" y1="3" x2="50" y2="12" stroke="#dc143c" stroke-width="1.4"/>
+          <line x1="73.5" y1="9.3" x2="71.5" y2="15.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="90.7" y1="26.5" x2="84.5" y2="28.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="97" y1="50" x2="88" y2="50" stroke="#dc143c" stroke-width="1.4"/>
+          <line x1="90.7" y1="73.5" x2="84.5" y2="71.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="73.5" y1="90.7" x2="71.5" y2="84.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="50" y1="97" x2="50" y2="88" stroke="#dc143c" stroke-width="1.4"/>
+          <line x1="26.5" y1="90.7" x2="28.5" y2="84.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="9.3" y1="73.5" x2="15.5" y2="71.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="3" y1="50" x2="12" y2="50" stroke="#dc143c" stroke-width="1.4"/>
+          <line x1="9.3" y1="26.5" x2="15.5" y2="28.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+          <line x1="26.5" y1="9.3" x2="28.5" y2="15.5" stroke="#dc143c" stroke-width="0.7" opacity="0.35"/>
+        </g>
+
+        <circle cx="50" cy="50" r="33" fill="none" stroke="#3a0018" stroke-width="0.5" opacity="0.6"/>
+        <line x1="28" y1="32" x2="72" y2="68" stroke="#2a0010" stroke-width="0.8" opacity="0.5"/>
+        <line x1="72" y1="32" x2="28" y2="68" stroke="#2a0010" stroke-width="0.8" opacity="0.5"/>
+
+        <path d="M 14,50 C 28,26 72,26 86,50 C 72,74 28,74 14,50 Z"
+          fill="#060000" stroke="#dc143c" stroke-width="1.1" filter="url(#logoGlow)"/>
+        <circle cx="50" cy="50" r="12" fill="url(#irisGrad)"/>
+        <circle cx="50" cy="50" r="12" fill="none" stroke="#8b0000" stroke-width="0.8"/>
+        <circle cx="50" cy="50" r="5.5" fill="#dc143c" opacity="0.9"/>
+        <circle cx="50" cy="50" r="2" fill="#ff3050"/>
+        <line x1="14" y1="50" x2="38" y2="50" stroke="#dc143c" stroke-width="0.5" opacity="0.25"/>
+        <line x1="62" y1="50" x2="86" y2="50" stroke="#dc143c" stroke-width="0.5" opacity="0.25"/>
+      </svg>
+
+      <div class="logo-label">
+        <span>────</span>
+        <b>ANIME</b>
+        <span>────</span>
+      </div>
+
+      <div class="showdown-wrap">
+        <span class="showdown-red">SHOWDOWN</span>
+        <span class="showdown-purple">SHOWDOWN</span>
+        <span class="showdown-main">SHOWDOWN</span>
+      </div>
+
+      <div class="logo-divider">
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
+
+      <div class="logo-subtitle">ULTIMAX</div>
+    </section>
+
+    <nav class="asu-nav">
+      <div class="nav-row">
+        <a href="index.html" class="asu-button">🏠 HOME</a>
+        <a href="contestants.html" class="asu-button">🎭 CONTESTANTS</a>
+        <a href="episodes.html" class="asu-button">📺 EPISODES</a>
+        <a href="eliminations.html" class="asu-button">⚔️ ELIMINATIONS</a>
+        <a href="lore.html" class="asu-button">📜 LORE</a>
+        <a href="map.html" class="asu-button">🗺️ MAP</a>
+        <a href="join.html" class="asu-button">✅ JOIN ASU</a>
+      </div>
+      <div class="nav-row">
+        <a href="updates.html" class="asu-button">🔔 UPDATES</a>
+        <a href="news.html" class="asu-button">📰 NEWS</a>
+        <a href="classified.html" class="asu-button">📂 CLASSIFIED FILES</a>
+        <a href="surveillance.html" class="asu-button">📹 SURVEILLANCE</a>
+        <a href="deleted.html" class="asu-button">💀 DELETED FILES</a>
+        <a href="themes.html" class="asu-button">🎵 THEMES</a>
+        <a href="experiments.html" class="asu-button">🧪 EXPERIMENTS</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <p class="archive-label">OFFICIAL ASU ARCHIVE — ISLAND MAP</p>
+    <h1>MAP</h1>
+    <p>Click any marker to open that location's file. The City loads first. Switch tabs for the Ocean or the Arena.</p>
+  </section>
+
+  <section class="map-tabs">
+    <button class="map-tab-btn active" data-tab="city">CITY</button>
+    <button class="map-tab-btn" data-tab="ocean">OCEAN</button>
+    <button class="map-tab-btn" data-tab="arena">ARENA</button>
+  </section>
+
+  <section class="map-panel active" id="panel-city">
+    <div class="map-frame">
+      <img src="map/city.png" alt="City map">
+      <div class="map-hotspot" style="left:46.0%; top:6.2%;" data-slug="escape-team-house" data-name="Escape Team House" data-blurb="A quiet safehouse where the Exit Team meets to plan. Officially, it's just another building on the block." data-image="map/locations/escape-team-house.jpg">
+        <span class="map-hotspot-tooltip">Escape Team House</span>
+      </div>
+      <div class="map-hotspot" style="left:29.5%; top:13.6%;" data-slug="skate-shop-and-tea" data-name="Skate Shop And Tea" data-blurb="A laid-back hangout spot. Contestants come here to cool off between challenges." data-image="map/locations/skate-shop-and-tea.jpg">
+        <span class="map-hotspot-tooltip">Skate Shop And Tea</span>
+      </div>
+      <div class="map-hotspot" style="left:40.2%; top:21.5%;" data-slug="ichiraku-ramen" data-name="Ichiraku Ramen" data-blurb="The most popular food stop on the island. Almost every contestant has been spotted here at least once." data-image="map/locations/ichiraku-ramen.jpg">
+        <span class="map-hotspot-tooltip">Ichiraku Ramen</span>
+      </div>
+      <div class="map-hotspot" style="left:26.9%; top:32.8%;" data-slug="restaurant" data-name="Restaurant" data-blurb="A quieter place to eat, usually used for private conversations contestants don't want overheard." data-image="map/locations/restaurant.jpg">
+        <span class="map-hotspot-tooltip">Restaurant</span>
+      </div>
+      <div class="map-hotspot" style="left:41.3%; top:28.9%;" data-slug="housing" data-name="Housing" data-blurb="Where most contestants sleep between episodes. Rooms are assigned, not chosen." data-image="map/locations/housing.jpg">
+        <span class="map-hotspot-tooltip">Housing</span>
+      </div>
+      <div class="map-hotspot" style="left:59.5%; top:25.5%;" data-slug="escanor-tavern" data-name="Escanor Tavern" data-blurb="Loud, bright, and always busy after dark. Rumor has it Escanor never actually leaves." data-image="map/locations/escanor-tavern.jpg">
+        <span class="map-hotspot-tooltip">Escanor Tavern</span>
+      </div>
+      <div class="map-hotspot" style="left:43.1%; top:43.6%;" data-slug="the-middle" data-name="The Middle" data-blurb="The open plaza at the center of the city. Almost every major confrontation starts here." data-image="map/locations/the-middle.jpg">
+        <span class="map-hotspot-tooltip">The Middle</span>
+      </div>
+      <div class="map-hotspot" style="left:67.9%; top:47.6%;" data-slug="ua-high" data-name="UA High" data-blurb="Training grounds repurposed for the competition. Still technically a school. Technically." data-image="map/locations/ua-high.jpg">
+        <span class="map-hotspot-tooltip">UA High</span>
+      </div>
+      <div class="map-hotspot" style="left:43.6%; top:55.5%;" data-slug="aot-town" data-name="AOT Town" data-blurb="An old European-style district, quiet during the day and unnervingly quiet at night." data-image="map/locations/aot-town.jpg">
+        <span class="map-hotspot-tooltip">AOT Town</span>
+      </div>
+      <div class="map-hotspot" style="left:23.5%; top:61.7%;" data-slug="poke-mart" data-name="Poke Mart" data-blurb="The closest thing to a general store on the island. Nobody's sure who runs it." data-image="map/locations/poke-mart.jpg">
+        <span class="map-hotspot-tooltip">Poke Mart</span>
+      </div>
+      <div class="map-hotspot" style="left:22.5%; top:70.8%;" data-slug="sakamoto-gas-station" data-name="Sakamoto Gas Station" data-blurb="A gas station with no cars to fill up. Nobody's figured out what it's actually for." data-image="map/locations/sakamoto-gas-station.jpg">
+        <span class="map-hotspot-tooltip">Sakamoto Gas Station</span>
+      </div>
+      <div class="map-hotspot" style="left:36.3%; top:82.7%;" data-slug="baki-boxing-gym" data-name="Baki Boxing Gym" data-blurb="Unofficial training ground for anyone looking to settle a score before a challenge." data-image="map/locations/baki-boxing-gym.jpg">
+        <span class="map-hotspot-tooltip">Baki Boxing Gym</span>
+      </div>
+      <div class="map-hotspot" style="left:74.9%; top:71.9%;" data-slug="zenin-clan" data-name="Zenin Clan" data-blurb="A walled-off compound near the edge of the city. Access is restricted. No explanation given." data-image="map/locations/zenin-clan.jpg">
+        <span class="map-hotspot-tooltip">Zenin Clan</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-panel" id="panel-ocean">
+    <div class="map-frame">
+      <img src="map/ocean.png" alt="Ocean map">
+      <div class="map-hotspot" style="left:31.8%; top:57.4%;" data-slug="the-valley-of-the-end" data-name="The Valley Of The End" data-blurb="A massive waterfall canyon at the edge of the map. Said to be where the very first Hotlog was recorded." data-image="map/locations/the-valley-of-the-end.jpg">
+        <span class="map-hotspot-tooltip">The Valley Of The End</span>
+      </div>
+      <div class="map-hotspot" style="left:8.9%; top:80.5%;" data-slug="chunin-exams" data-name="Chunin Exams" data-blurb="An old testing ground built into the cliffs. Mostly abandoned now." data-image="map/locations/chunin-exams.jpg">
+        <span class="map-hotspot-tooltip">Chunin Exams</span>
+      </div>
+      <div class="map-hotspot" style="left:46.7%; top:52.4%;" data-slug="baratie" data-name="Baratie" data-blurb="A restaurant built onto a ship, permanently anchored offshore." data-image="map/locations/baratie.jpg">
+        <span class="map-hotspot-tooltip">Baratie</span>
+      </div>
+      <div class="map-hotspot" style="left:54.5%; top:44.5%;" data-slug="crator" data-name="Crator" data-blurb="A sunken ring in the water, deep enough that nobody's confirmed what's at the bottom." data-image="map/locations/crator.jpg">
+        <span class="map-hotspot-tooltip">Crator</span>
+      </div>
+      <div class="map-hotspot" style="left:61.5%; top:45.6%;" data-slug="kame-house" data-name="Kame House" data-blurb="A small island home, oddly peaceful compared to everything else nearby." data-image="map/locations/kame-house.jpg">
+        <span class="map-hotspot-tooltip">Kame House</span>
+      </div>
+      <div class="map-hotspot" style="left:80.3%; top:45.6%;" data-slug="morioh-station" data-name="Morioh Station" data-blurb="A train station that leads to nowhere. The tracks stop a few feet past the platform." data-image="map/locations/morioh-station.jpg">
+        <span class="map-hotspot-tooltip">Morioh Station</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-panel" id="panel-arena">
+    <div class="arena-card">
+      <h2>THE ARENA</h2>
+      <p>
+        The arena is where it all ends. Every Elimination Battle takes place here, and only one contestant
+        walks out. The Host built it separately from the rest of the map on purpose.
+      </p>
+    </div>
+  </section>
+
+  <div class="map-modal" id="mapModal">
+    <div class="map-modal-box">
+      <button class="map-modal-close" id="mapModalClose" aria-label="Close">✕</button>
+      <h3 id="mapModalTitle"></h3>
+      <div class="map-modal-image">
+        <img id="mapModalImage" src="" alt="">
+        <div class="map-modal-image-fallback" id="mapModalFallback">CLOSE-UP IMAGE PENDING</div>
+      </div>
+      <p id="mapModalBlurb"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-stat">ARCHIVE VERSION<b>v2.4.1</b></div>
+      <div class="footer-stat">RECOVERED FILES<b>47</b></div>
+      <div class="footer-stat">CURRENT BUILD<b>SEASON 1 (PRE-RELEASE)</b></div>
+      <div class="footer-stat">DISCORD<b><a class="footer-discord" href="#">Join the server</a></b></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Anime Showdown Ultimax. All rights reserved.</span>
+      <span class="footer-creepy">The Host is always watching.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="site-common.js"></script>
+
+  <script>
+    /* ---------- tab switching ---------- */
+    document.querySelectorAll(".map-tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".map-tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".map-panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    /* ---------- hotspot modal ---------- */
+    const modal = document.getElementById("mapModal");
+    const modalTitle = document.getElementById("mapModalTitle");
+    const modalBlurb = document.getElementById("mapModalBlurb");
+    const modalImage = document.getElementById("mapModalImage");
+    const modalFallback = document.getElementById("mapModalFallback");
+    const modalClose = document.getElementById("mapModalClose");
+
+    document.querySelectorAll(".map-hotspot").forEach((spot) => {
+      spot.addEventListener("click", () => {
+        modalTitle.textContent = spot.dataset.name;
+        modalBlurb.textContent = spot.dataset.blurb;
+        modalFallback.style.display = "none";
+        modalImage.style.display = "block";
+        modalImage.src = spot.dataset.image;
+        modal.classList.add("visible");
+      });
+    });
+
+    modalImage.addEventListener("error", () => {
+      modalImage.style.display = "none";
+      modalFallback.style.display = "flex";
+    });
+
+    function closeModal() { modal.classList.remove("visible"); }
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+  </script>
+
+</body>
+</html>
